@@ -19,6 +19,7 @@
     direction: rtl;
     background-color: var(--color-surface-base);
     color: var(--color-on-surface);
+    scroll-behavior: smooth;
   }
 }
 
@@ -31,3 +32,37 @@
 .hero-gradient {
   background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
 }
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active,
+.reveal-right.active,
+.reveal-left.active,
+.reveal-scale.active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
