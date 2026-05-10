@@ -23,6 +23,7 @@
           <div class="hidden md:flex items-center gap-10">
             <a href="#" class="text-brand-primary font-bold transition-colors">الرئيسية</a>
             <a href="#about" class="text-on-surface/60 hover:text-brand-primary font-medium transition-colors">عن الكوتش</a>
+            <a href="#results" class="text-on-surface/60 hover:text-brand-primary font-medium transition-colors">نتائجنا</a>
             <a href="#plans" class="text-on-surface/60 hover:text-brand-primary font-medium transition-colors">الخطط</a>
             <a href="#contact" class="text-on-surface/60 hover:text-brand-primary font-medium transition-colors">اتصل بنا</a>
           </div>
@@ -39,18 +40,20 @@
                 class="w-full h-full object-cover rounded-full"
               />
             </div>
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-primary">
+          <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-primary">
               <i data-lucide="menu" class="w-6 h-6"></i>
             </button>
           </div>
+        </nav>
+
         </nav>
       </header>
 
       <main class="pt-20">
         <!-- Hero Section -->
-        <section class="relative py-32 px-6 overflow-hidden hero-gradient">
+        <section class="relative py-20 md:py-32 px-6 overflow-hidden hero-gradient">
           <div class="max-w-5xl mx-auto text-center reveal">
-            <h1 class="text-5xl md:text-8xl font-black leading-[1.6] mb-10">
+            <h1 class="text-4xl sm:text-5xl md:text-8xl font-black leading-[1.4] md:leading-[1.6] mb-10">
               ابدأ رحلتك نحو <br />
               <span class="text-brand-primary">جسم أقوى</span> ونظام حياة أفضل
             </h1>
@@ -69,8 +72,8 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="max-w-7xl mx-auto px-6 py-24">
-          <div class="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center bg-surface-card rounded-[2rem] p-10 md:p-16 border border-brand-primary/10">
+        <section id="about" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+          <div class="grid lg:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-center bg-surface-card rounded-[2rem] p-6 md:p-16 border border-brand-primary/10">
             <div class="relative order-2 lg:order-1 reveal-right">
               <div class="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border-4 border-brand-primary/20 shadow-2xl">
                 <img 
@@ -80,13 +83,13 @@
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-surface-base/80 via-transparent to-transparent"></div>
               </div>
-              <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-24 h-24 md:w-40 md:h-40 bg-brand-primary rounded-full flex items-center justify-center p-6 shadow-2xl rotate-12">
-                <p class="text-surface-base font-black text-center text-xs md:text-sm leading-tight">5+ أعوام خبرة</p>
+              <div class="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-10 w-20 h-20 md:w-40 md:h-40 bg-brand-primary rounded-full flex items-center justify-center p-4 md:p-6 shadow-2xl rotate-12">
+                <p class="text-surface-base font-black text-center text-[10px] md:text-sm leading-tight">5+ أعوام خبرة</p>
               </div>
             </div>
 
-            <div class="space-y-8 order-1 lg:order-2 reveal-left">
-              <p class="text-xl md:text-2xl text-on-surface leading-relaxed text-right font-medium">
+            <div class="space-y-8 order-1 lg:order-2 reveal-left text-center lg:text-right">
+              <p class="text-xl md:text-2xl text-on-surface leading-relaxed font-medium">
                 أنا مدرب متخصص في تحسين الأداء البدني وإعادة تكوين الجسم، أساعدك في الوصول لأفضل نسخة من نفسك من خلال نهج علمي وعملي يركز على النتائج المستدامة.
               </p>
               
@@ -107,7 +110,7 @@
 
               <div class="pt-4 space-y-4">
                 <p class="text-brand-primary font-bold text-sm tracking-widest uppercase">التركيز دائمًا على:</p>
-                <div class="flex flex-wrap gap-3">
+                <div class="flex flex-wrap justify-center lg:justify-start gap-3">
                   <span class="px-6 py-2 bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded-full text-sm font-bold">الاستمرارية</span>
                   <span class="px-6 py-2 bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded-full text-sm font-bold">التقدم الحقيقي</span>
                   <span class="px-6 py-2 bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded-full text-sm font-bold">عادات قوية</span>
@@ -119,10 +122,63 @@
 
 
 
+        <!-- Transformation Section -->
+        <section id="results" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+          <div class="text-center mb-12 md:mb-16 reveal">
+            <h2 class="text-3xl md:text-6xl font-black mb-6 italic text-brand-primary">نتائج التحول</h2>
+            <p class="text-xl md:text-2xl text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
+              شاهد الفرق الحقيقي في 3 أشهر فقط من الالتزام بنظام NAWA Coaching.
+            </p>
+          </div>
+
+          <div class="bg-surface-card rounded-[3rem] border border-brand-primary/10 p-6 md:p-12 reveal">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div class="space-y-8 order-2 md:order-1 text-center md:text-right">
+                <div class="inline-flex items-center gap-3 px-6 py-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full text-brand-primary font-black uppercase tracking-tighter text-sm">
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  رحلة الـ 90 يوماً
+                </div>
+                <h3 class="text-3xl md:text-5xl font-black leading-tight">كيف وصلنا لهذه <br/><span class="text-brand-primary">النتيجة؟</span></h3>
+                <p class="text-on-surface/60 text-lg leading-relaxed italic">
+                  "التغيير مبيحصلش بالصدفة، بيحصل بالتخطيط والالتزام. في ظرف 12 أسبوع قدرنا نوصل لشكل جسم مختلف تماماً، مش بس خسارة وزن، لكن إعادة رسم لشكل الجسم (Body Recomposition)."
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/5 text-center">
+                    <p class="text-brand-primary text-2xl font-black mb-1">100%</p>
+                    <p class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">نظام غذائي مخصص</p>
+                  </div>
+                  <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/5 text-center">
+                    <p class="text-brand-primary text-2xl font-black mb-1">3 أشهر</p>
+                    <p class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">فترة الالتزام</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="relative group order-1 md:order-2">
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="relative overflow-hidden rounded-[2rem] border-2 border-white/5 shadow-2xl">
+                    <img src="/before.jpeg" alt="Before" class="w-full h-full object-cover aspect-[3/4] grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" />
+                    <div class="absolute bottom-4 left-4 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest">Before</div>
+                  </div>
+                  <div class="relative overflow-hidden rounded-[2rem] border-2 border-brand-primary/30 shadow-2xl shadow-brand-primary/10">
+                    <img src="/after.jpeg" alt="After" class="w-full h-full object-cover aspect-[3/4] group-hover:scale-105 transition-all duration-700" />
+                    <div class="absolute bottom-4 left-4 px-4 py-1.5 bg-brand-primary rounded-full text-[10px] font-black text-surface-base uppercase tracking-widest">After</div>
+                  </div>
+                </div>
+                <!-- Highlight badge -->
+                <div class="absolute -top-4 -right-4 md:-top-10 md:-right-10 w-20 h-20 md:w-32 md:h-32 bg-brand-primary rounded-full flex flex-col items-center justify-center p-2 md:p-4 shadow-2xl rotate-12 animate-pulse z-20">
+                  <span class="text-surface-base font-black text-xl md:text-3xl leading-none">90</span>
+                  <span class="text-surface-base font-bold text-[8px] md:text-xs uppercase tracking-tighter">يوم فقط</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Plans Section -->
-        <section id="plans" class="max-w-7xl mx-auto px-6 py-24">
-          <div class="text-center mb-20">
-            <h2 class="text-4xl md:text-6xl font-black mb-6 italic">خطط التدريب (Coaching Plans)</h2>
+        <section id="plans" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+          <div class="text-center mb-12 md:mb-20">
+            <h2 class="text-3xl md:text-6xl font-black mb-6 italic">خطط التدريب (Coaching Plans)</h2>
             <div class="h-1.5 w-24 bg-brand-primary mx-auto rounded-full"></div>
           </div>
 
@@ -174,7 +230,7 @@
                   </ul>
                 </div>
                 
-                <div class="pt-4 border-t border-brand-primary/10">
+                <div class="pt-4 border-t border-brand-primary/10 text-center">
                    <p class="text-xs font-black text-brand-primary uppercase mb-2">الهدف:</p>
                    <p class="text-sm font-bold text-on-surface/60">بناء أساس قوي + بداية نتائج ملموسة</p>
                 </div>
@@ -186,7 +242,7 @@
             </div>
 
             <!-- 6 Months Plan (Transformation) -->
-            <div class="group relative p-8 rounded-[2rem] border bg-surface-base border-brand-primary scale-105 shadow-2xl shadow-brand-primary/10 transition-all duration-300 flex flex-col h-full reveal">
+            <div class="group relative p-8 rounded-[2rem] border bg-surface-base border-brand-primary md:scale-105 md:shadow-2xl md:shadow-brand-primary/10 transition-all duration-300 flex flex-col h-full reveal">
               <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
                 أفضل قيمة - خصم 50%
               </div>
@@ -228,7 +284,7 @@
                   </ul>
                 </div>
                 
-                <div class="pt-4 border-t border-brand-primary/10">
+                <div class="pt-4 border-t border-brand-primary/10 text-center">
                    <p class="text-xs font-black text-brand-primary uppercase mb-2">الهدف:</p>
                    <p class="text-sm font-bold text-on-surface/60">تحول واضح في الجسم والعادات</p>
                 </div>
@@ -282,7 +338,7 @@
                   </ul>
                 </div>
                 
-                <div class="pt-4 border-t border-brand-primary/10">
+                <div class="pt-4 border-t border-brand-primary/10 text-center">
                    <p class="text-xs font-black text-brand-primary uppercase mb-2">الهدف:</p>
                    <p class="text-sm font-bold text-on-surface/60">تثبيت أسلوب حياة + نتائج مستدامة</p>
                 </div>
@@ -527,6 +583,7 @@
           <div class="flex flex-wrap justify-center gap-8 text-sm font-black uppercase tracking-widest text-on-surface/60">
             <a href="#" class="hover:text-brand-primary transition-colors">الرئيسية</a>
             <a href="#about" class="hover:text-brand-primary transition-colors">عن الكوتش</a>
+            <a href="#results" class="hover:text-brand-primary transition-colors">نتائجنا</a>
             <a href="#plans" class="hover:text-brand-primary transition-colors">خطط التدريب</a>
             <a href="#contact" class="hover:text-brand-primary transition-colors">اتصل بنا</a>
           </div>
@@ -553,6 +610,78 @@
         </span>
       </a>
 
+      <!-- Mobile Menu Sidebar -->
+      <div id="mobile-menu-backdrop" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+      
+      <div id="mobile-menu" class="fixed inset-y-0 right-0 z-[110] w-full max-w-[280px] bg-[#0b1f1a] border-l border-brand-primary/20 translate-x-full transition-transform duration-500 md:hidden sidebar-shadow">
+        <div class="flex flex-col h-full overflow-y-auto">
+          <!-- Sidebar Header -->
+          <div class="p-6 flex justify-between items-center border-b border-white/5 bg-[#132a24]/50 backdrop-blur-md sticky top-0 z-10">
+            <span class="text-xl font-black text-on-surface">NAWA <span class="text-brand-primary">نواة</span></span>
+            <button id="close-menu-btn" class="p-2 text-brand-primary hover:bg-brand-primary/10 rounded-xl transition-colors">
+              <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+          </div>
+          
+          <!-- Sidebar Links -->
+          <nav class="flex flex-col p-4 gap-2">
+            <a href="#" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
+              <div class="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
+                <i data-lucide="home" class="w-5 h-5"></i>
+              </div>
+              <span class="text-lg font-bold text-on-surface group-hover:text-brand-primary transition-colors">الرئيسية</span>
+            </a>
+            
+            <a href="#about" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
+              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
+                <i data-lucide="user" class="w-5 h-5"></i>
+              </div>
+              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">عن الكوتش</span>
+            </a>
+            
+            <a href="#results" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
+              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
+                <i data-lucide="trophy" class="w-5 h-5"></i>
+              </div>
+              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">نتائجنا</span>
+            </a>
+            
+            <a href="#plans" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
+              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
+                <i data-lucide="layout-grid" class="w-5 h-5"></i>
+              </div>
+              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">الخطط</span>
+            </a>
+            
+            <a href="#contact" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
+              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+              </div>
+              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">اتصل بنا</span>
+            </a>
+          </nav>
+
+          <!-- Sidebar Footer -->
+          <div class="mt-auto p-6 border-t border-white/5 bg-[#132a24]/30">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="relative">
+                <div class="w-12 h-12 rounded-full border-2 border-brand-primary p-0.5">
+                  <img src="/youssef.jpeg" alt="Coach" class="w-full h-full object-cover rounded-full" />
+                </div>
+                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-brand-primary rounded-full border-2 border-[#0b1f1a]"></div>
+              </div>
+              <div class="text-right">
+                <p class="text-[10px] text-on-surface/40 uppercase font-mono tracking-widest leading-none mb-1">Coach</p>
+                <p class="text-sm font-bold text-on-surface">يوسف محمد</p>
+              </div>
+            </div>
+            <a href="https://wa.me/201029305002" class="flex items-center justify-center gap-3 w-full py-4 bg-brand-primary text-surface-base font-black rounded-xl text-center shadow-lg shadow-brand-primary/20 hover:bg-brand-secondary transition-all active:scale-95">
+              <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+              ابدأ رحلتك الآن
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
