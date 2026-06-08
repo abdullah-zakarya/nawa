@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>عن المدرب - NAWA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=Lexend:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#2f372e",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#161d16",
+                        "on-primary": "#003915",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#bccbb9",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "on-error": "#690005",
+                        "surface-tint": "#4ae176",
+                        "background": "#0e150e",
+                        "secondary-fixed": "#8ff8b4",
+                        "on-surface": "#dce5d9",
+                        "on-secondary-fixed": "#00210f",
+                        "primary": "#4be277",
+                        "surface": "#0e150e",
+                        "surface-bright": "#333b33",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#242c24",
+                        "surface-container": "#1a221a",
+                        "secondary-container": "#00834b",
+                        "on-background": "#dce5d9",
+                        "tertiary": "#ffb5ab",
+                        "on-primary-fixed": "#002109",
+                        "on-tertiary-container": "#76231b",
+                        "on-tertiary": "#60130d",
+                        "on-primary-fixed-variant": "#005321",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "secondary": "#73db9a",
+                        "primary-fixed-dim": "#4ae176",
+                        "on-secondary-container": "#e5ffe9",
+                        "on-primary-container": "#004b1e",
+                        "tertiary-fixed": "#ffdad5",
+                        "inverse-surface": "#dce5d9",
+                        "primary-container": "#22c55e",
+                        "on-secondary-fixed-variant": "#00522d",
+                        "outline": "#869585",
+                        "on-secondary": "#00391d",
+                        "surface-dim": "#0e150e",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-variant": "#2f372e",
+                        "on-tertiary-fixed": "#410001",
+                        "inverse-primary": "#006e2f",
+                        "inverse-on-surface": "#2a322a",
+                        "secondary-fixed-dim": "#73db9a",
+                        "outline-variant": "#3d4a3d",
+                        "surface-container-lowest": "#091009"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "xs": "4px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Cairo"],
+                        "body-md": ["Cairo"],
+                        "body-lg": ["Cairo"],
+                        "display-lg": ["Cairo"],
+                        "label-sm": ["Lexend"],
+                        "display-xl": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(26, 34, 26, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(134, 149, 133, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm transition-all duration-300">
+<div class="flex flex-row-reverse justify-between items-center w-full px-margin max-w-[1200px] mx-auto h-20">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary text-[32px]" data-icon="fitness_center" data-weight="fill" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<span class="text-display-lg font-display-lg font-bold text-primary dark:text-primary tracking-tight">NAWA</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-label-sm text-label-sm hover:bg-surface-container-low transition-all duration-300 scale-95 active:scale-90 flex items-center gap-xs shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+                ابدأ الآن
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-xl px-margin max-w-[1200px] mx-auto w-full flex flex-col gap-xl">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row gap-xl items-center relative">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background opacity-50 pointer-events-none rounded-full blur-3xl scale-150 -z-10"></div>
+<div class="w-full md:w-5/12 relative group">
+<div class="absolute -inset-1 bg-gradient-to-tr from-primary to-secondary-container rounded-[20px] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative aspect-[0.74] rounded-[16px] overflow-hidden border border-outline-variant/30 shadow-[0_10px_40px_rgba(0,8,5,0.8)]">
+<img alt="صورة المدرب" class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKg-NpvJCN_5JsFC77JJYramKX913KrYOUjVbvQZioblJCiVAlRORLDYvQKLu9xj_d_nDJMttax4sRHD6zotW0s6NkZEukqd2xNaQ3e_5D3ln4g_djTEjgP2As6ISEzfmgXSpJLTw2yl01tSmGLkiQJghVuxcsyr68aGS-KgFS5scPCtlIAtWLJktd4qdCLFezj89BY3l88gysQtojEmVjX8ZzXRqQZyP7JQ1fiB_j6DaGQVLmE3oJVsnlDDcJpbSe3Mh6S6DjKC4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+</div>
+</div>
+<div class="w-full md:w-7/12 flex flex-col gap-lg z-10">
+<div class="flex flex-col gap-sm">
+<span class="text-primary font-label-sm text-label-sm uppercase tracking-wider">المدرب الرئيسي</span>
+<h1 class="text-display-xl font-display-xl text-on-surface">خبير إعادة تشكيل الجسم</h1>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                    متخصص في تحويل الأجسام والارتقاء بالأداء الرياضي إلى مستويات النخبة. نعتمد في منهجيتنا على أسس علمية دقيقة تدمج بين التغذية المحسوبة والتدريب القائم على المقاومة، لنبني ليس فقط عضلات، بل أسلوب حياة مستدام يعكس القوة الداخلية والخارجية.
+                </p>
+<div class="flex gap-md pt-sm">
+<div class="glass-panel px-md py-sm rounded-lg flex items-center gap-sm">
+<span class="text-primary font-headline-md text-headline-md">+١٠</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">سنوات خبرة</span>
+</div>
+<div class="glass-panel px-md py-sm rounded-lg flex items-center gap-sm">
+<span class="text-primary font-headline-md text-headline-md">+٥٠٠</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">قصة نجاح</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Sections -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-lg">
+<!-- Training Philosophy -->
+<div class="md:col-span-8 bg-surface-container rounded-[16px] p-lg border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,8,5,0.4)] flex flex-col justify-between hover:border-primary/30 transition-colors duration-300">
+<div class="flex justify-between items-start mb-md">
+<h2 class="text-headline-md font-headline-md text-on-surface">فلسفة التدريب</h2>
+<span class="material-symbols-outlined text-primary/50 text-[32px]" data-icon="psychology">psychology</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                    لا أؤمن بالحلول السريعة أو الأنظمة القاسية المؤقتة. التدريب الحقيقي هو رحلة انضباط والتزام. فلسفتي ترتكز على "الأداء الأمثل"، حيث يتم تصميم كل برنامج ليتناسب مع البنية الحيوية الفريدة لكل متدرب. نركز على جودة الحركة، التقدم التدريجي، والتعافي الذكي لضمان نتائج تدوم طوال العمر.
+                </p>
+<div class="mt-lg flex gap-sm flex-wrap">
+<span class="bg-primary/10 text-primary px-sm py-xs rounded-full text-label-sm font-label-sm">الانضباط</span>
+<span class="bg-primary/10 text-primary px-sm py-xs rounded-full text-label-sm font-label-sm">الاستدامة</span>
+<span class="bg-primary/10 text-primary px-sm py-xs rounded-full text-label-sm font-label-sm">الأسس العلمية</span>
+</div>
+</div>
+<!-- Certifications -->
+<div class="md:col-span-4 bg-surface-container rounded-[16px] p-lg border border-outline-variant/20 shadow-[0_4px_20px_rgba(0,8,5,0.4)] flex flex-col hover:border-primary/30 transition-colors duration-300">
+<div class="flex justify-between items-start mb-md">
+<h2 class="text-headline-md font-headline-md text-on-surface">الاعتمادات</h2>
+<span class="material-symbols-outlined text-primary/50 text-[32px]" data-icon="verified">verified</span>
+</div>
+<ul class="flex flex-col gap-md text-body-md font-body-md text-on-surface-variant flex-grow justify-center">
+<li class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span>اعتماد المدرب الشخصي من NASM</span>
+</li>
+<li class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span>أخصائي تغذية رياضية من ISSA</span>
+</li>
+<li class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span>شهادة الإسعافات الأولية CPR/AED</span>
+</li>
+<li class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span>خبير تقييم الحركة الوظيفية FMS</span>
+</li>
+</ul>
+</div>
+<!-- Personal Journey -->
+<div class="md:col-span-12 bg-surface-container-highest rounded-[16px] p-lg border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute left-0 top-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
+<div class="flex flex-col md:flex-row gap-lg items-center relative z-10">
+<div class="flex-grow flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-primary mb-xs">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+<h2 class="text-headline-md font-headline-md">الرحلة الشخصية</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+                            بدأ شغفي بعالم اللياقة البدنية منذ سنوات المراهقة، لم يكن الأمر مجرد اهتمام عابر بل كان وسيلة لاكتشاف قوة الإرادة البشرية. مررت بتجارب شخصية مع الإصابات وفترات من الثبات في المستوى، مما دفعني للتعمق في علوم التشريح والتغذية. كل تحدٍ واجهته كان درساً أضاف لخبرتي، واليوم أسخر هذه الحصيلة المعرفية والعملية لتختصر على متدربيي طريق الوصول إلى أهدافهم، متجنبين الأخطاء التي قد تعيق تقدمهم.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl bg-surface-container dark:bg-surface-container">
+<div class="flex flex-col md:flex-row-reverse justify-between items-center px-margin max-w-[1200px] mx-auto gap-lg">
+<div class="text-headline-md font-headline-md text-primary">NAWA</div>
+<nav class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">الرئيسية</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">حاسبة اللياقة</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">قصص النجاح</a>
+<a class="text-primary font-label-sm text-label-sm opacity-80 hover:opacity-100" href="#">من نحن</a>
+</nav>
+<div class="text-on-surface-variant font-label-sm text-label-sm text-center md:text-right">
+                © 2024 NAWA. جميع الحقوق محفوظة
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NAWA - ابدأ رحلتك</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=Lexend:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#2f372e",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#161d16",
+                        "on-primary": "#003915",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#bccbb9",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "on-error": "#690005",
+                        "surface-tint": "#4ae176",
+                        "background": "#0e150e",
+                        "secondary-fixed": "#8ff8b4",
+                        "on-surface": "#dce5d9",
+                        "on-secondary-fixed": "#00210f",
+                        "primary": "#4be277",
+                        "surface": "#0e150e",
+                        "surface-bright": "#333b33",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#242c24",
+                        "surface-container": "#1a221a",
+                        "secondary-container": "#00834b",
+                        "on-background": "#dce5d9",
+                        "tertiary": "#ffb5ab",
+                        "on-primary-fixed": "#002109",
+                        "on-tertiary-container": "#76231b",
+                        "on-tertiary": "#60130d",
+                        "on-primary-fixed-variant": "#005321",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "secondary": "#73db9a",
+                        "primary-fixed-dim": "#4ae176",
+                        "on-secondary-container": "#e5ffe9",
+                        "on-primary-container": "#004b1e",
+                        "tertiary-fixed": "#ffdad5",
+                        "inverse-surface": "#dce5d9",
+                        "primary-container": "#22c55e",
+                        "on-secondary-fixed-variant": "#00522d",
+                        "outline": "#869585",
+                        "on-secondary": "#00391d",
+                        "surface-dim": "#0e150e",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-variant": "#2f372e",
+                        "on-tertiary-fixed": "#410001",
+                        "inverse-primary": "#006e2f",
+                        "inverse-on-surface": "#2a322a",
+                        "secondary-fixed-dim": "#73db9a",
+                        "outline-variant": "#3d4a3d",
+                        "surface-container-lowest": "#091009"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "xs": "4px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Cairo"],
+                        "body-md": ["Cairo"],
+                        "body-lg": ["Cairo"],
+                        "display-lg": ["Cairo"],
+                        "label-sm": ["Lexend"],
+                        "display-xl": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(19, 42, 36, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(134, 239, 172, 0.1);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
+<div class="flex flex-row-reverse justify-between items-center w-full px-margin max-w-[1200px] mx-auto h-20">
+<!-- Leading Icon -->
+<div class="flex items-center text-primary dark:text-primary scale-95 active:scale-90 transition-transform cursor-pointer hover:bg-surface-container-low duration-300 p-sm rounded-full">
+<span class="material-symbols-outlined text-[28px]" data-icon="fitness_center" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+<!-- Headline / Brand -->
+<div class="text-display-lg font-display-lg font-bold text-primary dark:text-primary">
+                NAWA
+            </div>
+<!-- Trailing Action -->
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-headline-md text-headline-md text-[18px] hover:bg-primary transition-colors shadow-[0_4px_14px_0_rgba(34,197,94,0.39)]">
+                ابدأ الآن
+            </button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[839px] flex items-center pt-20 overflow-hidden">
+<!-- Background Image with Alt Prompt -->
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic Hero Background" class="w-full h-full object-cover object-center" data-alt="A high-end cinematic shot of an elite athlete training in a dramatic, dimly lit professional gym space. The atmosphere is intense and focused, bathed in deep, rich dark green shadows with subtle, moody rim lighting that highlights the athlete's dedication. The aesthetic is modern, disciplined, and luxurious, perfectly matching a 'Dark Forest' brand identity. Shot with a shallow depth of field, creating a slight, elegant blur in the background to emphasize strength, vitality, and premium performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDNQz6FduXEcYFg1f9cWFQeArdhNf-XSacVk7tmY_w0FEQCDLmuh3W0egCYlOgUCt48Lowa4L3GfpeSwwLAIOsmhZrQ9CtwlFdLUcsPsrhptN8QlB1HSQNxTxj1JRISaePdGhIG1qcxjdBAhiTvIEpOro3DCg3Ir-0tiXR5BavkREyYQnCg9EpZN9j1fk5PRSqEx4Rxp3uMYsQB4jnv6QmwSsbDxJZrof0XgPrT0QOcXRACXNCW7IRjBRMm2KAFnjaeRX7nMCxyyk"/>
+<!-- Tonal Overlay for Depth -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background z-10"></div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent z-10"></div>
+</div>
+<div class="relative z-20 max-w-[1200px] mx-auto px-margin w-full flex flex-col items-start gap-lg mt-xl">
+<div class="inline-flex items-center gap-sm bg-surface-container/80 backdrop-blur-sm border border-outline-variant/50 rounded-full px-md py-xs mb-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-secondary tracking-widest uppercase">مستوى جديد من اللياقة</span>
+</div>
+<h1 class="text-display-xl font-display-xl text-on-background max-w-2xl leading-tight">
+                    حول حياتك مع <br/>
+<span class="text-primary">الانضباط العميق</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mb-md">
+                    نظام تدريبي احترافي مصمم للنخبة. اكتشف قوة الالتزام في بيئة تدفعك لتجاوز حدودك، مدعوماً بأحدث تقنيات التحليل والمتابعة.
+                </p>
+<div class="flex flex-wrap gap-md mt-sm">
+<button class="bg-primary-container text-on-primary-container px-xl py-md rounded-xl font-headline-md text-body-lg flex items-center gap-sm hover:bg-primary transition-all glow-effect">
+<span>انطلق في رحلتك</span>
+<span class="material-symbols-outlined rtl:rotate-180" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="glass-panel text-on-background px-xl py-md rounded-xl font-headline-md text-body-lg flex items-center gap-sm hover:bg-surface-container transition-all">
+<span>اكتشف الفلسفة</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Philosophy Section (Glassmorphism Bento) -->
+<section class="py-xl relative z-10 -mt-xl">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl p-lg flex flex-col gap-md transform hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-sm">
+<span class="material-symbols-outlined text-[24px]" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background">القوة الكامنة</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                            بناء أساس صلب لا يعتمد على المعدات فقط، بل على إرادة حديدية وتكنيك مدروس بعناية فائقة.
+                        </p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl p-lg flex flex-col gap-md transform hover:-translate-y-1 transition-transform duration-300 md:-translate-y-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-sm">
+<span class="material-symbols-outlined text-[24px]" data-icon="monitor_heart" style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background">التحمل المستدام</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                            تطوير قدرات الجهاز التنفسي والقلب بأساليب تحاكي التحديات الحقيقية، لتكون جاهزاً في كل الأوقات.
+                        </p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl p-lg flex flex-col gap-md transform hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary mb-sm">
+<span class="material-symbols-outlined text-[24px]" data-icon="self_improvement" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-background">التوازن الذهني</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">
+                            الربط بين العقل والجسد. التدريب في نوى ليس مجرد حركة، بل هو حالة من التركيز العميق والتأمل الحركي.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why NAWA Section -->
+<section class="py-[80px]">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="flex flex-col md:flex-row gap-xl items-center">
+<div class="w-full md:w-1/2 flex flex-col gap-lg">
+<h2 class="text-display-lg font-display-lg text-on-background">
+                            لماذا <span class="text-primary">نوى</span>؟
+                        </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                            نحن لا نقدم مجرد مساحة للتدريب، بل نوفر منظومة متكاملة تدمج بين الرفاهية والأداء العالي في بيئة خالية من المشتتات.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md mt-sm">
+<div class="flex items-start gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-outline-variant/30 transition-colors">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="analytics">analytics</span>
+<div>
+<h4 class="text-body-lg font-headline-md font-bold text-on-background mb-xs">تحليل متقدم</h4>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">متابعة دقيقة لكل حركة</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-outline-variant/30 transition-colors">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="group">group</span>
+<div>
+<h4 class="text-body-lg font-headline-md font-bold text-on-background mb-xs">مجتمع النخبة</h4>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">تدرب مع من يشاركونك الشغف</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-outline-variant/30 transition-colors">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="restaurant">restaurant</span>
+<div>
+<h4 class="text-body-lg font-headline-md font-bold text-on-background mb-xs">تغذية مخصصة</h4>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">خطط مدعومة علمياً</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-md bg-surface-container rounded-lg border border-transparent hover:border-outline-variant/30 transition-colors">
+<span class="material-symbols-outlined text-secondary mt-1" data-icon="spa">spa</span>
+<div>
+<h4 class="text-body-lg font-headline-md font-bold text-on-background mb-xs">استشفاء فاخر</h4>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">مرافق مصممة للتجديد</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative h-[500px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-outline-variant/20">
+<img alt="Luxury Gym Facility" class="w-full h-full object-cover" data-alt="A highly detailed, architectural shot of a luxury fitness facility interior. The room features a minimalist, brutalist aesthetic with smooth dark concrete walls and premium, state-of-the-art black and emerald green fitness equipment. Strategic, dramatic spot lighting casts deep, sophisticated shadows, creating an atmosphere of exclusivity and serious athletic pursuit. The color palette is dominated by deep forest greens, rich blacks, and subtle glowing accents, embodying a 'zero-clutter', high-end performance sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR34xUogRc8GGQVEAAgLbxzrP1k-U8-QRwse9XIVR-9E7gxM726nkXEQZ89reFmCqPTB4lyQuP9UivSHU2S-F-j_zBaGvM9kBEdcUhRda6Q0g6qEpo8RKSS__2v_IIJ3j4bDPujZL1VbpZEqvjYdFUyglc_76tQcgwGcxbDWCbq_WST6oax-n2q6Dv_9gZwzhiJKyNh5YgrWwnKEXWFeKqKyihl4hiwtyh07SKpVbQZ4pS2BDKi_mpeux2m_MNHN9yuQyYTPE-P2E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container w-full py-xl mt-xl">
+<div class="flex flex-col md:flex-row-reverse justify-between items-center px-margin max-w-[1200px] mx-auto gap-lg">
+<!-- Brand / Logo -->
+<div class="text-headline-md font-headline-md text-primary">
+                NAWA
+            </div>
+<!-- Links -->
+<nav class="flex flex-wrap justify-center gap-lg">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">الرئيسية</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">حاسبة اللياقة</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">قصص النجاح</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">من نحن</a>
+</nav>
+<!-- Copyright -->
+<div class="text-body-md font-body-md text-on-surface-variant text-sm">
+                © 2024 NAWA. جميع الحقوق محفوظة
+            </div>
+</div>
+</footer>
+</body></html>

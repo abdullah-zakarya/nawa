@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>حاسبة نسبة الدهون والسعرات الحرارية - NAWA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=Lexend:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#0e150e",
+                        "on-surface": "#dce5d9",
+                        "secondary-fixed-dim": "#73db9a",
+                        "inverse-primary": "#006e2f",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "on-tertiary-container": "#76231b",
+                        "tertiary": "#ffb5ab",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "on-error": "#690005",
+                        "surface-container-high": "#242c24",
+                        "surface-container-low": "#161d16",
+                        "on-surface-variant": "#bccbb9",
+                        "on-tertiary-fixed": "#410001",
+                        "inverse-surface": "#dce5d9",
+                        "secondary-container": "#00834b",
+                        "error": "#ffb4ab",
+                        "surface-container": "#1a221a",
+                        "background": "#0e150e",
+                        "on-secondary-fixed": "#00210f",
+                        "surface": "#0e150e",
+                        "on-secondary-container": "#e5ffe9",
+                        "on-secondary": "#00391d",
+                        "inverse-on-surface": "#2a322a",
+                        "outline": "#869585",
+                        "surface-bright": "#333b33",
+                        "surface-container-lowest": "#091009",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "on-secondary-fixed-variant": "#00522d",
+                        "primary-fixed-dim": "#4ae176",
+                        "secondary-fixed": "#8ff8b4",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-tertiary": "#60130d",
+                        "on-background": "#dce5d9",
+                        "secondary": "#73db9a",
+                        "outline-variant": "#3d4a3d",
+                        "surface-variant": "#2f372e",
+                        "surface-tint": "#4ae176",
+                        "on-primary-fixed-variant": "#005321",
+                        "surface-container-highest": "#2f372e",
+                        "primary": "#4be277",
+                        "on-primary-fixed": "#002109",
+                        "on-primary": "#003915",
+                        "on-primary-container": "#004b1e",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#22c55e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "unit": "4px",
+                        "gutter": "20px",
+                        "margin": "24px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "lg": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Cairo"],
+                        "display-xl": ["Cairo"],
+                        "label-sm": ["Lexend"],
+                        "headline-md": ["Cairo"],
+                        "display-lg": ["Cairo"],
+                        "body-lg": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-lg": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0B1F1A; /* Base Dark Forest */
+            color: #dce5d9;
+        }
+        
+        .card-bg {
+            background-color: #132A24; /* Container Layer */
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 8, 5, 0.6);
+        }
+
+        .input-bg {
+            background-color: #132A24;
+            border: 1px solid #3d4a3d; /* outline-variant */
+            transition: border-color 0.3s ease;
+        }
+
+        .input-bg:focus {
+            border-color: #22c55e;
+            outline: none;
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B1F1A; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #132A24; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22c55e; 
+        }
+
+        /* Circular Progress */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-dim/90 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<div class="flex flex-row-reverse justify-between items-center px-margin max-w-[1200px] mx-auto h-20">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="fitness_center">fitness_center</span>
+<span class="font-display-lg text-display-lg font-bold text-primary">NAWA</span>
+</div>
+<nav class="hidden md:flex gap-lg">
+<!-- Example nav items, suppressed as per instructions if purely a tool, but adding a basic link back to main -->
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-300" href="#">الرئيسية</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">حاسبة السعرات</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-headline-md text-headline-md hover:bg-primary transition-colors active:scale-95">
+                ابدأ الآن
+            </button>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-24 px-margin max-w-[1200px] mx-auto w-full">
+<!-- Hero Section -->
+<section class="text-center mb-xl">
+<h1 class="font-display-xl text-display-xl text-on-surface mb-sm">حاسبة نسبة الدهون والسعرات الحرارية</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                الخطوة الأولى نحو تحولك الجسدي تبدأ بالمعرفة الدقيقة. أدخل بياناتك للحصول على تحليل احترافي لاحتياجاتك اليومية.
+            </p>
+</section>
+<!-- Main Content: Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Interactive Form (Left side on RTL) -->
+<div class="lg:col-span-7 space-y-gutter">
+<div class="card-bg card-shadow rounded-xl p-6 lg:p-8 border border-outline-variant/20">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+                        بياناتك الشخصية
+                    </h2>
+<form class="space-y-6" id="calculatorForm">
+<!-- Gender Selection (Pills) -->
+<div>
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">الجنس</label>
+<div class="flex gap-4">
+<label class="flex-1 cursor-pointer">
+<input checked="" class="peer sr-only" name="gender" type="radio" value="male"/>
+<div class="p-4 rounded-lg border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+<span class="material-symbols-outlined block mb-1" data-icon="man">man</span>
+                                        ذكر
+                                    </div>
+</label>
+<label class="flex-1 cursor-pointer">
+<input class="peer sr-only" name="gender" type="radio" value="female"/>
+<div class="p-4 rounded-lg border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary">
+<span class="material-symbols-outlined block mb-1" data-icon="woman">woman</span>
+                                        أنثى
+                                    </div>
+</label>
+</div>
+</div>
+<!-- Basic Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div>
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">العمر (سنوات)</label>
+<input class="w-full input-bg rounded-lg p-3 text-on-surface" placeholder="مثال: 30" required="" type="number"/>
+</div>
+<div>
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">الوزن (كجم)</label>
+<input class="w-full input-bg rounded-lg p-3 text-on-surface" placeholder="مثال: 75" required="" type="number"/>
+</div>
+<div>
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">الطول (سم)</label>
+<input class="w-full input-bg rounded-lg p-3 text-on-surface" placeholder="مثال: 175" required="" type="number"/>
+</div>
+</div>
+<!-- Measurements Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md pt-4 border-t border-outline-variant/30">
+<div>
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">محيط الرقبة (سم)</label>
+<input class="w-full input-bg rounded-lg p-3 text-on-surface" placeholder="مثال: 40" type="number"/>
+</div>
+<div>
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">محيط الخصر (سم)</label>
+<input class="w-full input-bg rounded-lg p-3 text-on-surface" placeholder="مثال: 85" type="number"/>
+</div>
+<!-- Hip (Hidden by default, shown for women via JS if implemented) -->
+<div class="hidden" id="hipInputGroup">
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">محيط الأرداف (سم)</label>
+<input class="w-full input-bg rounded-lg p-3 text-on-surface" placeholder="مثال: 95" type="number"/>
+</div>
+</div>
+<!-- Activity Level -->
+<div class="pt-4 border-t border-outline-variant/30">
+<label class="block font-body-md text-body-md text-on-surface-variant mb-xs">مستوى النشاط اليومي</label>
+<div class="relative">
+<select class="w-full input-bg rounded-lg p-3 text-on-surface appearance-none">
+<option value="1.2">خامل (عمل مكتبي، لا تمرين)</option>
+<option value="1.375">نشاط خفيف (تمرين 1-3 أيام في الأسبوع)</option>
+<option selected="" value="1.55">نشاط متوسط (تمرين 3-5 أيام في الأسبوع)</option>
+<option value="1.725">نشاط عالي (تمرين 6-7 أيام في الأسبوع)</option>
+<option value="1.9">رياضي محترف (تمرين مرتين يومياً)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-4 rounded-xl hover:bg-primary transition-all shadow-lg active:scale-[0.98] mt-6" onclick="calculateResults()" type="button">
+                            احسب النتائج
+                        </button>
+</form>
+</div>
+</div>
+<!-- Results Section (Right side on RTL) -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Main Results Card -->
+<div class="card-bg card-shadow rounded-xl p-6 lg:p-8 border border-outline-variant/20 relative overflow-hidden group">
+<!-- Subtle Glow Effect -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant/30 pb-4">التحليل الشامل</h3>
+<div class="space-y-8">
+<!-- Body Fat Ring -->
+<div class="flex items-center gap-6">
+<div class="relative w-24 h-24 shrink-0">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-variant" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<!-- Dashed stroke for progress, controlled via JS typically -->
+<circle class="text-primary progress-ring__circle" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-linecap="round" stroke-width="8" style="stroke-dasharray: 251.2; stroke-dashoffset: 200;"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+<span class="font-display-lg text-headline-md font-bold text-primary" id="bfResult">18%</span>
+</div>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-primary mb-1 uppercase tracking-wider">نسبة الدهون</p>
+<p class="font-body-md text-body-md text-on-surface-variant">مستوى لياقة ممتاز. استمر في البناء العضلي للحفاظ على هذا المعدل.</p>
+</div>
+</div>
+<!-- TDEE & BMR Metrics -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-dim/50 rounded-lg p-4 border border-outline-variant/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="local_fire_department">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-secondary">احتياجك اليومي (TDEE)</span>
+</div>
+<div class="font-display-lg text-headline-md text-on-surface">2,450 <span class="text-body-md text-on-surface-variant font-normal">سُعر</span></div>
+</div>
+<div class="bg-surface-dim/50 rounded-lg p-4 border border-outline-variant/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-outline text-sm" data-icon="monitor_heart">monitor_heart</span>
+<span class="font-label-sm text-label-sm text-outline">الأيض الأساسي (BMR)</span>
+</div>
+<div class="font-display-lg text-headline-md text-on-surface">1,820 <span class="text-body-md text-on-surface-variant font-normal">سُعر</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Coaching Integration Card -->
+<div class="card-bg rounded-xl p-6 border border-primary/20 bg-gradient-to-br from-[#132A24] to-[#0B1F1A]">
+<div class="flex items-start gap-4 mb-4">
+<div class="bg-primary/20 p-3 rounded-full shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="military_tech">military_tech</span>
+</div>
+<div>
+<h4 class="font-headline-md text-body-lg text-on-surface font-bold">بناءً على أرقامك</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                                نوصي ببرنامج <span class="text-primary font-bold">"النخبة للتنشيف العضلي"</span>. تم تصميمه خصيصاً لمن هم في نطاق 15-20٪ دهون ويرغبون في إبراز التفاصيل العضلية.
+                            </p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 border border-primary text-primary font-headline-md text-body-md py-3 rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                        استشر مدرب الآن
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl bg-surface-container-low flat no shadows">
+<div class="flex flex-col md:flex-row-reverse justify-between items-center px-margin gap-lg max-w-[1200px] mx-auto">
+<div class="font-display-lg text-display-lg text-primary">NAWA</div>
+<nav class="flex gap-6">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary-fixed-dim transition-all cursor-pointer" href="#">الرئيسية</a>
+<a class="text-primary underline font-body-md text-body-md hover:text-secondary-fixed-dim transition-all cursor-pointer" href="#">حاسبة السعرات</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary-fixed-dim transition-all cursor-pointer" href="#">حاسبة الدهون</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary-fixed-dim transition-all cursor-pointer" href="#">تواصل معنا</a>
+</nav>
+<div class="text-on-surface-variant font-body-md text-body-md">
+                © 2024 نوا NAWA. جميع الحقوق محفوظة.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple script to toggle Hip input based on gender
+        const genderInputs = document.querySelectorAll('input[name="gender"]');
+        const hipGroup = document.getElementById('hipInputGroup');
+
+        genderInputs.forEach(input => {
+            input.addEventListener('change', (e) => {
+                if(e.target.value === 'female') {
+                    hipGroup.classList.remove('hidden');
+                } else {
+                    hipGroup.classList.add('hidden');
+                }
+            });
+        });
+
+        function calculateResults() {
+            // Visual feedback only for demo purposes
+            const btn = document.querySelector('button[onclick="calculateResults()"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> جاري الحساب...';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                
+                // Animate progress ring
+                const circle = document.querySelector('.progress-ring__circle');
+                const circumference = 40 * 2 * Math.PI; // radius 40
+                const percent = 15; // Mock calculation result
+                const offset = circumference - percent / 100 * circumference;
+                circle.style.strokeDashoffset = offset;
+                
+                document.getElementById('bfResult').innerText = percent + '%';
+            }, 800);
+        }
+    </script>
+</body></html>

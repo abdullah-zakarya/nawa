@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NAWA - خطط التدريب</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=Lexend:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#2f372e",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#161d16",
+                        "on-primary": "#003915",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#bccbb9",
+                        "on-tertiary-fixed-variant": "#7f2a21",
+                        "on-error": "#690005",
+                        "surface-tint": "#4ae176",
+                        "background": "#0e150e",
+                        "secondary-fixed": "#8ff8b4",
+                        "on-surface": "#dce5d9",
+                        "on-secondary-fixed": "#00210f",
+                        "primary": "#4be277",
+                        "surface": "#0e150e",
+                        "surface-bright": "#333b33",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#242c24",
+                        "surface-container": "#1a221a",
+                        "secondary-container": "#00834b",
+                        "on-background": "#dce5d9",
+                        "tertiary": "#ffb5ab",
+                        "on-primary-fixed": "#002109",
+                        "on-tertiary-container": "#76231b",
+                        "on-tertiary": "#60130d",
+                        "on-primary-fixed-variant": "#005321",
+                        "tertiary-container": "#ff8b7c",
+                        "primary-fixed": "#6bff8f",
+                        "secondary": "#73db9a",
+                        "primary-fixed-dim": "#4ae176",
+                        "on-secondary-container": "#e5ffe9",
+                        "on-primary-container": "#004b1e",
+                        "tertiary-fixed": "#ffdad5",
+                        "inverse-surface": "#dce5d9",
+                        "primary-container": "#22c55e",
+                        "on-secondary-fixed-variant": "#00522d",
+                        "outline": "#869585",
+                        "on-secondary": "#00391d",
+                        "surface-dim": "#0e150e",
+                        "tertiary-fixed-dim": "#ffb4a9",
+                        "surface-variant": "#2f372e",
+                        "on-tertiary-fixed": "#410001",
+                        "inverse-primary": "#006e2f",
+                        "inverse-on-surface": "#2a322a",
+                        "secondary-fixed-dim": "#73db9a",
+                        "outline-variant": "#3d4a3d",
+                        "surface-container-lowest": "#091009"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "40px",
+                        "xs": "4px",
+                        "margin": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "unit": "4px",
+                        "gutter": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Cairo"],
+                        "body-md": ["Cairo"],
+                        "body-lg": ["Cairo"],
+                        "display-lg": ["Cairo"],
+                        "label-sm": ["Lexend"],
+                        "display-xl": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel {
+            background: rgba(26, 34, 26, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .glow-border {
+            box-shadow: 0 0 24px rgba(34, 197, 94, 0.15), inset 0 0 0 2px rgba(34, 197, 94, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
+<div class="flex flex-row-reverse justify-between items-center w-full px-margin max-w-[1200px] mx-auto h-20">
+<!-- Leading Icon -->
+<span aria-hidden="true" class="material-symbols-outlined text-primary dark:text-primary text-headline-md font-headline-md">fitness_center</span>
+<!-- Headline (Brand Logo) -->
+<div class="text-display-lg font-display-lg font-bold text-primary dark:text-primary tracking-tight">NAWA</div>
+<!-- Trailing Action -->
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg text-label-sm font-label-sm hover:bg-surface-container-low transition-all duration-300 scale-95 active:scale-90 flex items-center justify-center">
+                ابدأ الآن
+            </button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="pt-32 pb-xl px-margin relative overflow-hidden">
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background to-background pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto text-center relative z-10">
+<h1 class="text-display-xl font-display-xl text-primary mb-sm">خطط التدريب الاحترافية</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl">استثمر في صحتك وابنِ جسماً أقوى مع خطط التدريب المصممة خصيصاً لأهدافك، تحت إشراف نخبة من الخبراء.</p>
+</div>
+</section>
+<!-- Comparison Grid -->
+<section class="px-margin pb-32">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-lg md:gap-gutter items-center relative">
+<!-- 3 Months Plan -->
+<div class="glass-panel rounded-xl p-lg border border-outline-variant flex flex-col h-full hover:bg-surface-container-high transition-colors duration-300">
+<div class="mb-md">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-xs">٣ أشهر</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">الالتزام الأساسي</p>
+</div>
+<div class="mb-lg flex items-baseline gap-xs">
+<span class="text-display-lg font-display-lg text-primary">£250</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ إجمالي</span>
+</div>
+<div class="flex-grow">
+<ul class="space-y-sm mb-xl text-body-md font-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>خطة تدريب مخصصة</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>نظام غذائي متكامل</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>متابعة نصف شهرية</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-md rounded-lg border border-primary text-primary hover:bg-primary/10 transition-colors text-label-sm font-label-sm uppercase tracking-wider">
+                        اختر الخطة
+                    </button>
+</div>
+<!-- 6 Months Plan (Best Value) -->
+<div class="bg-surface-container-high rounded-xl p-lg border-2 border-primary-container glow-border flex flex-col h-[105%] relative z-10 transform md:-translate-y-4">
+<div class="absolute -top-4 right-1/2 translate-x-1/2 bg-primary-container text-on-primary-container px-md py-xs rounded-full text-label-sm font-label-sm font-bold whitespace-nowrap shadow-lg shadow-primary-container/20">
+                        الأكثر قيمة
+                    </div>
+<div class="mb-md mt-sm">
+<h3 class="text-headline-md font-headline-md text-primary mb-xs">٦ أشهر</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">التحول الجذري</p>
+</div>
+<div class="mb-lg flex items-baseline gap-xs">
+<span class="text-display-lg font-display-lg text-primary">£450</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ إجمالي</span>
+</div>
+<div class="flex-grow">
+<ul class="space-y-sm mb-xl text-body-md font-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>خطة تدريب وتغذية متقدمة</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>متابعة أسبوعية دقيقة</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>تعديلات غير محدودة للبرنامج</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>دعم متواصل على الواتساب</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary transition-colors text-label-sm font-label-sm uppercase tracking-wider font-bold">
+                        انضم الآن
+                    </button>
+</div>
+<!-- 12 Months Plan -->
+<div class="glass-panel rounded-xl p-lg border border-outline-variant flex flex-col h-full hover:bg-surface-container-high transition-colors duration-300">
+<div class="mb-md">
+<h3 class="text-headline-md font-headline-md text-on-surface mb-xs">١٢ شهر</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">أسلوب حياة مستدام</p>
+</div>
+<div class="mb-lg flex items-baseline gap-xs">
+<span class="text-display-lg font-display-lg text-primary">£800</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">/ إجمالي</span>
+</div>
+<div class="flex-grow">
+<ul class="space-y-sm mb-xl text-body-md font-body-md text-on-surface">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>جميع ميزات خطة ٦ أشهر</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>تقييم شامل كل ٣ أشهر</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>مكالمة شهرية مع المدرب 1v1</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>أولوية في الدعم والاستجابة</span>
+</li>
+</ul>
+</div>
+<button class="w-full py-md rounded-lg border border-primary text-primary hover:bg-primary/10 transition-colors text-label-sm font-label-sm uppercase tracking-wider">
+                        اختر الخطة
+                    </button>
+</div>
+</div>
+</section>
+<!-- What's Included Section -->
+<section class="py-32 bg-surface-container-low px-margin relative">
+<div class="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,theme('colors.surface-container-highest')_100%)] opacity-30 pointer-events-none"></div>
+<div class="max-w-[1200px] mx-auto relative z-10">
+<h2 class="text-display-lg font-display-lg text-primary text-center mb-xl">ماذا تشمل خطتك؟</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+<!-- Nutrition -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high border border-outline-variant flex items-center justify-center mb-md group-hover:border-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-[32px]">restaurant_menu</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-sm">تغذية محسوبة</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">برامج غذائية مرنة ومحسوبة الماكروز تتناسب مع نمط حياتك والأطعمة التي تفضلها، لضمان استمرارية النتائج.</p>
+</div>
+<!-- Training -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high border border-outline-variant flex items-center justify-center mb-md group-hover:border-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-[32px]">exercise</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-sm">تدريب ذكي</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">جداول تمارين مفصلة ومدعمة بفيديوهات توضيحية، مصممة لبناء العضلات وحرق الدهون بكفاءة عالية.</p>
+</div>
+<!-- Support -->
+<div class="flex flex-col items-center text-center group">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-high border border-outline-variant flex items-center justify-center mb-md group-hover:border-primary transition-colors duration-300">
+<span class="material-symbols-outlined text-primary text-[32px]">forum</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-sm">دعم مستمر</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">لست وحدك في هذه الرحلة. نوفر لك دعماً يومياً ومتابعة دقيقة لضمان بقائك على المسار الصحيح وتخطي أي عقبات.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container w-full py-xl">
+<div class="flex flex-col md:flex-row-reverse justify-between items-center px-margin max-w-[1200px] mx-auto gap-lg">
+<!-- Brand Logo -->
+<div class="text-headline-md font-headline-md text-primary">NAWA</div>
+<!-- Links -->
+<nav class="flex flex-wrap justify-center gap-md">
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">الرئيسية</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">حاسبة اللياقة</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">قصص النجاح</a>
+<a class="text-label-sm font-label-sm text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">من نحن</a>
+</nav>
+<!-- Copyright -->
+<div class="text-body-md font-body-md text-secondary dark:text-secondary opacity-80">
+                © 2024 NAWA. جميع الحقوق محفوظة
+            </div>
+</div>
+</footer>
+</body></html>
