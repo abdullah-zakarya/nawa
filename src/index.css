@@ -36,6 +36,12 @@
     background-color: var(--color-surface-base);
     color: var(--color-on-surface);
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
   }
 }
 
