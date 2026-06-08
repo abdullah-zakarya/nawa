@@ -6,12 +6,28 @@
   --font-display: "Cairo", sans-serif;
   --font-mono: "Lexend", ui-monospace, SFMono-Regular, monospace;
 
+  /* الألوان الرسمية الحالية لموقع نواة */
+  --color-primary: #22c55e;                      /* الأخضر الزمردي الحيوي */
+  --color-primary-container: #22c55e;
+  --color-on-primary-container: #0b1f1a;
+  --color-secondary: #86efac;                    /* الأخضر الفاتح المساعد */
+  --color-background: #0b1f1a;                   /* أخضر الغابة الداكن جداً (الأساس) */
+  --color-surface: #0b1f1a;
+  --color-surface-dim: #0b1f1a;
+  --color-surface-container: #132a24;            /* أخضر الغابة المتوسط للبطاقات والـ Cards */
+  --color-surface-container-low: #0b1f1a;
+  --color-surface-container-high: #1c362e;
+  --color-surface-container-highest: #264239;
+  --color-on-surface: #dce5d9;                   /* النص الأساسي المائل للأخضر الفاتح */
+  --color-on-surface-variant: #bccbb9;           /* النص المساعد */
+  --color-outline: #3d4a3d;
+  --color-outline-variant: #2d382d;
+  
+  /* المحافظة على التسميات القديمة لعدم كسر الأكواد الحالية */
   --color-brand-primary: #22c55e;
   --color-brand-secondary: #86efac;
   --color-surface-base: #0b1f1a;
   --color-surface-card: #132a24;
-  --color-on-surface: #dce5d9;
-  --color-on-surface-variant: #bccbb9;
 }
 
 @layer base {
@@ -79,4 +95,50 @@
   opacity: 1;
   transform: translate(0) scale(1);
 }
+
+/* New Design Compatibility Utilities */
+.glass-panel {
+  background: rgba(19, 42, 36, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(34, 197, 94, 0.1);
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.glow-border {
+  box-shadow: 0 0 24px rgba(34, 197, 94, 0.15), inset 0 0 0 2px rgba(34, 197, 94, 0.5);
+}
+
+.stat-glow {
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+.card-bg {
+  background-color: var(--color-surface-container);
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(0, 8, 5, 0.6);
+}
+
+.input-bg {
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  transition: border-color 0.3s ease;
+}
+
+.input-bg:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
 

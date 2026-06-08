@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+    <title>قصص النجاح - NAWA</title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+      html, body {
+        background-color: #0b1f1a;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-background text-on-surface font-sans selection:bg-primary/20 selection:text-primary">
+    <div id="root">
+      <!-- Shared Header -->
+      <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-primary/10"></header>
+
+      <!-- Main Content -->
+      <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden py-16">
+          <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+            <img class="w-full h-full object-cover" alt="Cinematic gym background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHiiPdwSKG8f7UoULcuBM_JBl08_rFh2WIfNp3AgGGjC0yFKRLvYjw8CYdIXqEMDllD2D4q5TdLkJXs2g8XKBV8ZXflEVdywL-9Ahvf102yjqIsBv3BnFCmt_vz8WnfGNLKOIgIfYs8FWRqwTr7ONW-mjX6xTTHWLSb___uQK4DbrC6rZ8dHphaCWPKQWfmLOU4nytHXjiLnENEGFnQrTnbaPxb0pBIwkgVplBEDf8IDDoNHPTMVq8SGgl4aodIf6HcWdJ9y9X4kE"/>
+          </div>
+          <div class="relative z-10 text-center px-6 max-w-[800px] reveal">
+            <h2 class="text-4xl md:text-5xl font-black text-primary mb-4">قصص تحولت إلى واقع</h2>
+            <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+              هنا لا نبيع الأوهام، بل نصنع التحولات. اكتشف رحلات ملهمة لأشخاص قرروا الاستثمار في صحتهم ووصلوا إلى القمة مع NAWA.
+            </p>
+            <div class="mt-6 flex justify-center">
+              <div class="w-24 h-1 bg-primary rounded-full"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Featured Transformation (Bento Style) -->
+        <section class="max-w-[1200px] mx-auto px-6 py-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <!-- Before & After Comparison Grid -->
+            <div class="lg:col-span-7 grid grid-cols-2 gap-4 h-[450px] reveal-right">
+              <!-- Before Image -->
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/30 group">
+                <img alt="Before transformation" class="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-500 hover:scale-102" src="/before.jpeg"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 right-4 text-right">
+                  <span class="bg-red-500/80 text-white border border-red-500/30 px-3 py-1 rounded-lg text-xs font-black backdrop-blur-sm">قبل (٩٢ كجم)</span>
+                </div>
+              </div>
+              <!-- After Image -->
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/30 group">
+                <img alt="After transformation" class="w-full h-full object-cover grayscale-[0.1] group-hover:grayscale-0 transition-all duration-500 hover:scale-102" src="/after.jpeg"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-4 right-4 text-right">
+                  <span class="bg-primary/80 text-background border border-primary/30 px-3 py-1 rounded-lg text-xs font-black backdrop-blur-sm">بعد (٧٧ كجم)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Metrics Box -->
+            <div class="lg:col-span-5 flex flex-col gap-8 reveal-left">
+              <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/30 flex-1 flex flex-col justify-center">
+                <h4 class="text-primary font-bold text-xl mb-6">النتائج المحققة</h4>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="p-6 bg-surface-container-high rounded-xl text-center border border-outline-variant/20">
+                    <span class="block text-3xl font-extrabold text-primary stat-glow">-١٥ كجم</span>
+                    <span class="text-xs text-on-surface-variant font-medium">إجمالي نزول الوزن</span>
+                  </div>
+                  <div class="p-6 bg-surface-container-high rounded-xl text-center border border-outline-variant/20">
+                    <span class="block text-3xl font-extrabold text-secondary stat-glow">١٢ أسبوع</span>
+                    <span class="text-xs text-on-surface-variant font-medium">مدة الالتزام بالخطة</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-surface-container rounded-2xl p-8 border border-outline-variant/30 flex-1 flex flex-col justify-center relative overflow-hidden">
+                <h4 class="text-secondary font-bold text-lg mb-3">كيف وصلنا لهذه النتيجة؟</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed">
+                  "التغيير مبيحصلش بالصدفة، بيحصل بالتخطيط والالتزام. في ظرف ١٢ أسبوع قدرنا نوصل لشكل جسم مختلف تماماً، مش بس خسارة وزن، لكن إعادة رسم لشكل الجسم (Body Recomposition)."
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Statistics Row -->
+        <section class="bg-surface-container-lowest py-16 border-y border-outline-variant/10">
+          <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center reveal-scale">
+            <div class="flex flex-col gap-1">
+              <span class="text-4xl md:text-5xl font-black text-primary tracking-tighter">١٠٠٪</span>
+              <span class="text-sm text-on-surface-variant font-medium">برامج تدريبية مخصصة</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-4xl md:text-5xl font-black text-primary tracking-tighter">٥+</span>
+              <span class="text-sm text-on-surface-variant font-medium">سنوات خبرة كوتشينج</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-4xl md:text-5xl font-black text-primary tracking-tighter">٩٨٪</span>
+              <span class="text-sm text-on-surface-variant font-medium">نسبة رضا المشتركين</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Testimonial Section (Single Premium Testimonial) -->
+        <section class="max-w-[800px] mx-auto px-6 py-20">
+          <div class="text-center mb-12 reveal">
+            <h3 class="text-3xl font-black text-white mb-2">أصوات من الميدان</h3>
+            <p class="text-sm text-on-surface-variant font-medium">تجارب حقيقية من أعضاء مجتمع NAWA</p>
+          </div>
+
+          <div class="bg-surface-container rounded-3xl p-8 md:p-12 border border-outline-variant/20 hover:border-primary/30 transition-all duration-300 relative overflow-hidden group shadow-2xl reveal-scale">
+            <!-- Top decorative quote icon -->
+            <i data-lucide="quote" class="text-primary/10 w-24 h-24 absolute left-6 top-6 pointer-events-none"></i>
+            
+            <div class="flex flex-col items-center text-center relative z-10">
+              <!-- Cartoonish/Vector Avatar -->
+              <div class="w-24 h-24 rounded-full border-2 border-primary/30 p-1 mb-6 flex items-center justify-center bg-background/50 shadow-inner">
+                <svg class="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Background -->
+                  <circle cx="50" cy="50" r="46" fill="#132a24" stroke="#22c55e" stroke-width="2" stroke-opacity="0.3"/>
+                  <!-- Body/Shoulders -->
+                  <path d="M25 82C25 72 32 64 50 64C68 64 75 72 75 82" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+                  <!-- Head -->
+                  <circle cx="50" cy="42" r="16" stroke="#22c55e" stroke-width="4" fill="#132a24"/>
+                  <!-- Trainee Cap / Accent -->
+                  <path d="M34 42C34 33 42 30 50 30C58 30 66 33 66 42" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <!-- Rating -->
+              <div class="flex text-primary mb-6 gap-1">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+
+              <!-- Testimonial Content -->
+              <p class="text-xl md:text-2xl font-medium text-on-surface leading-relaxed max-w-[600px] mb-2 italic">
+                "ما شاء الله عليك يا كبتن كلام علمي و نصايح تحسها طالعة من واحد صاحب بجد اللهم بارك"
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="max-w-[1200px] mx-auto px-6 pb-24 reveal">
+          <div class="relative rounded-2xl overflow-hidden p-12 text-center flex flex-col items-center gap-6 bg-surface-container border border-primary/20">
+            <div class="absolute inset-0 opacity-5 pointer-events-none">
+              <div class="absolute inset-0" style="background-image: radial-gradient(#22C55E 1px, transparent 1px); background-size: 30px 30px;"></div>
+            </div>
+            <h2 class="text-3xl font-black text-white">ابدأ قصتك الآن</h2>
+            <p class="text-base text-on-surface-variant max-w-[600px] leading-relaxed">
+              لا تنتظر الغد، القصة العظيمة تبدأ بخطوة واحدة اليوم. اختر البرنامج المناسب لك ودعنا نبني مستقبلك الرياضي.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mt-4">
+              <a href="/plans.html" class="bg-primary text-background px-8 py-4 rounded-xl font-bold hover:bg-secondary transition-all flex items-center justify-center gap-2">
+                <span>اكتشف الخطط التدريبية</span>
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+              </a>
+              <a href="https://wa.me/201019912699?text=مرحباً كوتش يوسف، قمت بزيارة قصص النجاح في موقع نواة وأريد استشارتك لبدء برنامجي المخصص." class="border border-outline-variant text-white px-8 py-4 rounded-xl font-bold hover:bg-surface-container-high transition-all">
+                تواصل مع مدرب
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Shared Footer -->
+      <footer class="bg-background border-t border-primary/10 pt-20 pb-10 px-6"></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

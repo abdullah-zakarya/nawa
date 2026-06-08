@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+    <title>عن الكوتش - NAWA</title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+      html, body {
+        background-color: #0b1f1a;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-background text-on-surface font-sans selection:bg-primary/20 selection:text-primary">
+    <div id="root">
+      <!-- Shared Header -->
+      <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-primary/10"></header>
+
+      <!-- Main Content -->
+      <main class="max-w-7xl mx-auto px-6 pt-32 pb-24 flex flex-col gap-12 w-full">
+        <!-- Hero Section -->
+        <section class="flex flex-col lg:flex-row gap-12 items-center relative">
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background to-background opacity-50 pointer-events-none rounded-full blur-3xl scale-150 -z-10"></div>
+          
+          <div class="w-full lg:w-5/12 relative group reveal-right">
+            <div class="absolute -inset-1 bg-gradient-to-tr from-primary to-secondary rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-700"></div>
+            <div class="relative aspect-[1075/906] rounded-2xl overflow-hidden border border-outline-variant/30 shadow-2xl">
+              <img alt="صورة المدرب يوسف محمد" class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105" src="/youssef.jpeg"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-7/12 flex flex-col gap-6 reveal-left">
+            <div class="flex flex-col gap-2">
+              <span class="text-primary font-bold text-sm uppercase tracking-wider">المدرب الرئيسي</span>
+              <h1 class="text-4xl md:text-5xl font-black text-on-surface">خبير إعادة تشكيل الجسم</h1>
+            </div>
+            <p class="text-lg text-on-surface-variant leading-relaxed">
+              الكوتش يوسف محمد، متخصص في تحويل الأجسام والارتقاء بالأداء الرياضي إلى مستويات النخبة. نعتمد في منهجيتنا على أسس علمية دقيقة تدمج بين التغذية المحسوبة والتدريب القائم على المقاومة، لنبني ليس فقط عضلات، بل أسلوب حياة مستدام يعكس القوة الداخلية والخارجية.
+            </p>
+            <div class="flex gap-4 pt-2">
+              <div class="glass-panel px-6 py-4 rounded-xl flex items-center gap-3">
+                <span class="text-primary font-black text-3xl">+٥</span>
+                <span class="text-on-surface-variant text-sm">سنوات خبرة</span>
+              </div>
+              <div class="glass-panel px-6 py-4 rounded-xl flex items-center gap-3">
+                <span class="text-primary font-black text-3xl">+الكثير من</span>
+                <span class="text-on-surface-variant text-sm">قصص نجاح</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bento Grid Sections -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+          <!-- Training Philosophy -->
+          <div class="lg:col-span-12 bg-surface-container rounded-2xl p-8 border border-outline-variant/20 shadow-xl flex flex-col justify-between hover:border-primary/30 transition-colors duration-300 reveal">
+            <div class="flex justify-between items-start mb-6">
+              <h2 class="text-2xl font-bold text-on-surface">فلسفة التدريب</h2>
+              <i data-lucide="brain" class="text-primary/50 w-8 h-8"></i>
+            </div>
+            <p class="text-on-surface-variant leading-relaxed text-sm">
+              لا أؤمن بالحلول السريعة أو الأنظمة القاسية المؤقتة. التدريب الحقيقي هو رحلة انضباط والتزام. فلسفتي ترتكز على "الأداء الأمثل"، حيث يتم تصميم كل برنامج ليتناسب مع البنية الحيوية الفريدة لكل متدرب. نركز على جودة الحركة، التقدم التدريجي، والتعافي الذكي لضمان نتائج تدوم طوال العمر.
+            </p>
+            <div class="mt-8 flex gap-2 flex-wrap">
+              <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">الانضباط</span>
+              <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">الاستدامة</span>
+              <span class="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-semibold">الأسس العلمية</span>
+            </div>
+          </div>
+
+          <!-- Personal Journey -->
+          <div class="lg:col-span-12 bg-surface-container rounded-2xl p-8 border border-outline-variant/15 relative overflow-hidden group reveal">
+            <div class="absolute left-0 top-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2 group-hover:bg-primary/10 transition-colors duration-500"></div>
+            <div class="flex flex-col gap-4 relative z-10">
+              <div class="flex items-center gap-3 text-primary mb-2">
+                <i data-lucide="milestone" class="w-6 h-6"></i>
+                <h2 class="text-2xl font-bold">الرحلة الشخصية</h2>
+              </div>
+              <p class="text-on-surface-variant leading-relaxed text-sm">
+                بدأ شغفي بعالم اللياقة البدنية منذ سنوات المراهقة، لم يكن الأمر مجرد اهتمام عابر بل كان وسيلة لاكتشاف قوة الإرادة البشرية. مررت بتجارب شخصية مع الإصابات وفترات من الثبات في المستوى، مما دفعني للتعمق في علوم التشريح والتغذية. كل تحدٍ واجهته كان درساً أضاف لخبرتي، واليوم أسخر هذه الحصيلة المعرفية والعملية لتختصر على متدربيي طريق الوصول إلى أهدافهم، متجنبين الأخطاء التي قد تعيق تقدمهم.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Shared Footer -->
+      <footer class="bg-background border-t border-primary/10 pt-20 pb-10 px-6"></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

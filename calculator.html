@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
+    <title>حاسبة اللياقة البدنية - NAWA</title>
+    <link rel="stylesheet" href="/src/index.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+      html, body {
+        background-color: #0b1f1a;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-background text-on-surface font-sans selection:bg-primary/20 selection:text-primary">
+    <div id="root">
+      <!-- Shared Header -->
+      <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-primary/10"></header>
+
+      <!-- Main Content -->
+      <main class="flex-grow pt-32 pb-24 px-6 max-w-7xl mx-auto w-full">
+        <!-- Hero Section -->
+        <section class="text-center mb-16 reveal">
+          <h1 class="text-4xl md:text-5xl font-black text-on-surface mb-4">حاسبة نسبة الدهون والسعرات الحرارية</h1>
+          <p class="text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            الخطوة الأولى نحو تحولك الجسدي تبدأ بالمعرفة الدقيقة. أدخل بياناتك للحصول على تحليل احترافي لاحتياجاتك اليومية.
+          </p>
+        </section>
+
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Interactive Form (Right Column RTL) -->
+          <div class="lg:col-span-7 space-y-8 reveal-right">
+            <div class="card-bg card-shadow rounded-2xl p-6 lg:p-8 border border-outline-variant/20">
+              <h2 class="text-2xl font-black text-on-surface mb-8 flex items-center gap-3">
+                <i data-lucide="sliders" class="text-primary"></i>
+                بياناتك الشخصية
+              </h2>
+              <form class="space-y-6" id="calculatorForm" onsubmit="return false;">
+                <!-- Gender Selection (Pills) -->
+                <div>
+                  <label class="block text-sm font-bold text-on-surface-variant mb-3">الجنس</label>
+                  <div class="flex gap-4">
+                    <label class="flex-1 cursor-pointer">
+                      <input checked="" class="peer sr-only" name="gender" type="radio" value="male"/>
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary flex items-center justify-center gap-2 font-bold text-sm">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        <span>ذكر</span>
+                      </div>
+                    </label>
+                    <label class="flex-1 cursor-pointer">
+                      <input class="peer sr-only" name="gender" type="radio" value="female"/>
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary flex items-center justify-center gap-2 font-bold text-sm">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        <span>أنثى</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Basic Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div>
+                    <label class="block text-sm font-bold text-on-surface-variant mb-2">العمر (سنوات)</label>
+                    <input id="age" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold placeholder:text-on-surface/25 text-sm" placeholder="مثال: ٣٠" required="" type="number" min="10" max="99"/>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-bold text-on-surface-variant mb-2">الوزن (كجم)</label>
+                    <input id="weight" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold placeholder:text-on-surface/25 text-sm" placeholder="مثال: ٧٥" required="" type="number" step="0.1" min="30" max="250"/>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-bold text-on-surface-variant mb-2">الطول (سم)</label>
+                    <input id="height" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold placeholder:text-on-surface/25 text-sm" placeholder="مثال: ١٧٥" required="" type="number" min="100" max="250"/>
+                  </div>
+                </div>
+
+                <!-- Measurements Grid (Body Fat Parameters) -->
+                <div class="pt-6 border-t border-outline-variant/30">
+                  <div class="flex items-center gap-2 mb-4">
+                    <span class="text-xs font-bold text-primary px-2.5 py-1 rounded bg-primary/10">اختياري</span>
+                    <h3 class="text-sm font-bold text-on-surface-variant">قياسات الجسم لتحديد نسبة الدهون</h3>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-sm font-bold text-on-surface-variant mb-2">محيط الرقبة (سم)</label>
+                      <input id="neck" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold placeholder:text-on-surface/25 text-sm" placeholder="مثال: ٤٠" type="number" step="0.1" min="10" max="100"/>
+                    </div>
+                    <div>
+                      <label class="block text-sm font-bold text-on-surface-variant mb-2">محيط الخصر (سم)</label>
+                      <input id="waist" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold placeholder:text-on-surface/25 text-sm" placeholder="مثال: ٨٥" type="number" step="0.1" min="20" max="200"/>
+                    </div>
+                    <!-- Hip (Shown for women only) -->
+                    <div class="hidden md:col-span-2" id="hipInputGroup">
+                      <label class="block text-sm font-bold text-on-surface-variant mb-2">محيط الأرداف (سم)</label>
+                      <input id="hip" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold placeholder:text-on-surface/25 text-sm" placeholder="مثال: ٩٥" type="number" step="0.1" min="20" max="200"/>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Activity Level selection -->
+                <div class="pt-6 border-t border-outline-variant/30">
+                  <label class="block text-sm font-bold text-on-surface-variant mb-2">مستوى النشاط اليومي</label>
+                  <div class="relative">
+                    <select id="activity" class="w-full input-bg rounded-xl p-4 text-on-surface font-bold text-sm appearance-none cursor-pointer">
+                      <option value="1.2">خامل (عمل مكتبي، لا تمرين)</option>
+                      <option value="1.375">نشاط خفيف (تمرين ١-٣ أيام في الأسبوع)</option>
+                      <option selected="" value="1.55">نشاط متوسط (تمرين ٣-٥ أيام في الأسبوع)</option>
+                      <option value="1.725">نشاط عالي (تمرين ٦-٧ أيام في الأسبوع)</option>
+                      <option value="1.9">رياضي محترف (تمرين مرتين يومياً)</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-on-surface-variant">
+                      <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Physical Goal selection -->
+                <div class="pt-6 border-t border-outline-variant/30">
+                  <label class="block text-sm font-bold text-on-surface-variant mb-3">الهدف البدني</label>
+                  <div class="flex flex-col sm:flex-row gap-4">
+                    <label class="flex-1 cursor-pointer">
+                      <input checked="" class="peer sr-only" name="goal" type="radio" value="loss"/>
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary font-bold text-sm">
+                        خسارة دهون (تنشيف)
+                      </div>
+                    </label>
+                    <label class="flex-1 cursor-pointer">
+                      <input class="peer sr-only" name="goal" type="radio" value="maintain"/>
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary font-bold text-sm">
+                        المحافظة على الوزن
+                      </div>
+                    </label>
+                    <label class="flex-1 cursor-pointer">
+                      <input class="peer sr-only" name="goal" type="radio" value="gain"/>
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary font-bold text-sm">
+                        بناء عضلات (تضخيم)
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Action Button -->
+                <button class="w-full bg-primary text-background font-black text-lg py-4 rounded-xl hover:bg-secondary transition-all shadow-lg shadow-primary/15 active:scale-[0.98] mt-6 flex items-center justify-center gap-2" onclick="calculateResults()" type="button">
+                  <i data-lucide="sliders" class="w-5 h-5"></i>
+                  <span>احسب النتائج</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Results Section (Left Column RTL) -->
+          <div class="lg:col-span-5 space-y-8 reveal-left">
+            <!-- Hidden initially, shown via calculator.js -->
+            <div id="resultsCard" class="hidden card-bg card-shadow rounded-2xl p-6 lg:p-8 border border-outline-variant/20 relative overflow-hidden group">
+              <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              
+              <h3 class="text-2xl font-black text-on-surface mb-6 border-b border-outline-variant/30 pb-4">التحليل الشامل للنتائج</h3>
+              
+              <div class="space-y-8">
+                <!-- Body Fat Circular Ring -->
+                <div class="flex items-center gap-6 bg-background/40 p-4 rounded-xl border border-outline-variant/10">
+                  <div class="relative w-24 h-24 shrink-0">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                      <circle class="text-surface-container-high" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+                      <circle class="text-primary progress-ring__circle" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-linecap="round" stroke-width="8" style="stroke-dasharray: 251.2; stroke-dashoffset: 251.2;"></circle>
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                      <span class="text-2xl font-black text-primary" id="bfResult">--</span>
+                    </div>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-xs font-black text-primary mb-1 uppercase tracking-wider">نسبة دهون الجسم</p>
+                    <p class="text-xs text-on-surface-variant leading-relaxed" id="bfText">أدخل قياسات الرقبة والخصر والردف لحساب نسبة الدهون.</p>
+                  </div>
+                </div>
+
+                <!-- TDEE & BMR Metrics -->
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="bg-background/40 rounded-xl p-4 border border-outline-variant/25">
+                    <div class="flex items-center gap-2 mb-2 text-secondary">
+                      <i data-lucide="flame" class="w-4 h-4"></i>
+                      <span class="text-xs font-bold">احتياجك اليومي (TDEE)</span>
+                    </div>
+                    <div class="text-xl font-black text-on-surface" id="tdeeResult">--</div>
+                  </div>
+                  <div class="bg-background/40 rounded-xl p-4 border border-outline-variant/25">
+                    <div class="flex items-center gap-2 mb-2 text-on-surface-variant">
+                      <i data-lucide="activity" class="w-4 h-4"></i>
+                      <span class="text-xs font-bold">الأيض الأساسي (BMR)</span>
+                    </div>
+                    <div class="text-xl font-black text-on-surface" id="bmrResult">--</div>
+                  </div>
+                </div>
+
+                <!-- Recommended Daily Calories Card -->
+                <div class="bg-primary/10 border border-primary/20 rounded-xl p-6 text-center">
+                  <h4 class="text-xs font-black text-primary mb-2 uppercase tracking-widest">السعرات اليومية المستهدفة لتحقيق هدفك</h4>
+                  <div class="text-4xl font-black text-primary"><span id="targetCalories">--</span> <span class="text-sm font-medium text-on-surface-variant">سعرة</span></div>
+                </div>
+
+                <!-- Macronutrient Breakdown -->
+                <div class="space-y-4">
+                  <h4 class="text-sm font-black text-on-surface border-b border-outline-variant/30 pb-2">توزيع المغذيات الكبرى (Macros)</h4>
+                  
+                  <!-- Protein -->
+                  <div class="space-y-1.5">
+                    <div class="flex justify-between text-xs font-bold">
+                      <span class="text-primary">البروتين (٢.٢ جم لكل كجم)</span>
+                      <span><span id="macro-protein">--</span> جم (<span id="macro-protein-kcal">--</span> سعرة)</span>
+                    </div>
+                    <div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+                      <div id="bar-protein" class="bg-primary h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- Carbs -->
+                  <div class="space-y-1.5">
+                    <div class="flex justify-between text-xs font-bold">
+                      <span class="text-secondary">الكربوهيدرات</span>
+                      <span><span id="macro-carbs">--</span> جم (<span id="macro-carbs-kcal">--</span> سعرة)</span>
+                    </div>
+                    <div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+                      <div id="bar-carbs" class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- Fats -->
+                  <div class="space-y-1.5">
+                    <div class="flex justify-between text-xs font-bold">
+                      <span class="text-on-surface-variant">الدهون الصحية (٢٥٪ من السعرات)</span>
+                      <span><span id="macro-fats">--</span> جم (<span id="macro-fats-kcal">--</span> سعرة)</span>
+                    </div>
+                    <div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+                      <div id="bar-fats" class="bg-on-surface-variant/40 h-full rounded-full transition-all duration-500" style="width: 0%;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Coaching Integration Card -->
+            <div class="bg-surface-container rounded-2xl p-6 border border-primary/20 shadow-xl bg-gradient-to-br from-surface-container to-background flex flex-col gap-6">
+              <div class="flex items-start gap-4">
+                <div class="bg-primary/10 p-3 rounded-xl text-primary shrink-0 border border-primary/20">
+                  <i data-lucide="award" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-bold text-on-surface">صمم برنامجك المخصص الآن</h4>
+                  <p class="text-xs text-on-surface-variant leading-relaxed mt-2">
+                    النتائج الرقمية هي خارطة طريق أولية. للحصول على خطة دقيقة ١٠٠٪ تأخذ بعين الاعتبار تفضيلاتك الغذائية ونمط حياتك وإصاباتك، شارك هذه الأرقام معنا مباشرة.
+                  </p>
+                </div>
+              </div>
+              <a id="whatsapp-calc-btn" href="https://wa.me/201019912699" target="_blank" class="w-full flex items-center justify-center gap-2 border border-primary text-primary font-bold text-sm py-4 rounded-xl hover:bg-primary hover:text-background transition-all">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>أرسل النتائج للكوتش عبر الواتساب</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Shared Footer -->
+      <footer class="bg-background border-t border-primary/10 pt-20 pb-10 px-6"></footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/calculator.js"></script>
+  </body>
+</html>

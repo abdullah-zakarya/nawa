@@ -5,887 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpeg" href="/logo.jpeg" />
     <title>NAWA - كوتش يوسف محمد</title>
+    <link rel="stylesheet" href="/src/index.css" />
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+      html, body {
+        background-color: #0b1f1a;
+      }
+    </style>
   </head>
-  <body class="min-h-screen bg-surface-base text-on-surface font-sans selection:bg-brand-primary selection:text-surface-base">
+  <body class="min-h-screen bg-background text-on-surface font-sans selection:bg-primary/20 selection:text-primary">
     <div id="root">
-      <!-- Navigation -->
-      <header class="fixed top-0 w-full z-50 bg-surface-base/80 backdrop-blur-md border-b border-brand-primary/10">
-        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div class="flex items-center gap-4">
-            <div class="bg-brand-primary rounded-lg overflow-hidden w-10 h-10">
-              <img src="/logo.jpeg" alt="NAWA Logo" class="w-full h-full object-cover" />
-            </div>
-            <span class="text-2xl font-black tracking-tighter text-on-surface">NAWA <span class="text-brand-primary">نواة</span></span>
-          </div>
-          
-          <div class="hidden md:flex items-center gap-10">
-            <a href="#" class="nav-link text-brand-primary font-bold transition-colors">الرئيسية</a>
-            <a href="#about" class="nav-link text-on-surface/60 hover:text-brand-primary font-medium transition-colors">عن الكوتش</a>
-            <a href="#results" class="nav-link text-on-surface/60 hover:text-brand-primary font-medium transition-colors">نتائجنا</a>
-            <a href="#plans" class="nav-link text-on-surface/60 hover:text-brand-primary font-medium transition-colors">الخطط</a>
-            <a href="#calculator" id="nav-calculator" class="nav-link text-on-surface/60 hover:text-brand-primary font-medium transition-colors">احسب سعراتك</a>
-            <a href="#contact" class="nav-link text-on-surface/60 hover:text-brand-primary font-medium transition-colors">اتصل بنا</a>
-          </div>
+      <!-- Shared Header -->
+      <header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-primary/10"></header>
 
-          <div class="flex items-center gap-4">
-            <div class="hidden sm:block text-left ml-4">
-              <p class="text-xs text-on-surface/40 uppercase font-mono tracking-widest text-right">Coach</p>
-              <p class="text-sm font-bold text-right">يوسف محمد</p>
-            </div>
-            <div class="w-10 h-10 rounded-full border-2 border-brand-primary p-0.5">
-              <img 
-                src="/youssef.jpeg" 
-                alt="Coach" 
-                class="w-full h-full object-cover rounded-full"
-              />
-            </div>
-          <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-primary">
-              <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
+      <!-- Main Content -->
+      <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+          <!-- Background Image -->
+          <div class="absolute inset-0 z-0">
+            <img alt="Cinematic Hero Background" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDNQz6FduXEcYFg1f9cWFQeArdhNf-XSacVk7tmY_w0FEQCDLmuh3W0egCYlOgUCt48Lowa4L3GfpeSwwLAIOsmhZrQ9CtwlFdLUcsPsrhptN8QlB1HSQNxTxj1JRISaePdGhIG1qcxjdBAhiTvIEpOro3DCg3Ir-0tiXR5BavkREyYQnCg9EpZN9j1fk5PRSqEx4Rxp3uMYsQB4jnv6QmwSsbDxJZrof0XgPrT0QOcXRACXNCW7IRjBRMm2KAFnjaeRX7nMCxyyk"/>
+            <!-- Tonal Overlays -->
+            <div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background z-10"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent z-10"></div>
           </div>
-        </nav>
-      </header>
-
-      <main class="pt-20">
-        <!-- Home View wrapper -->
-        <div id="home-view" class="transition-opacity duration-300">
-          <!-- Hero Section -->
-        <section class="relative py-20 md:py-32 px-6 overflow-hidden hero-gradient">
-          <div class="max-w-5xl mx-auto text-center reveal">
-            <h1 class="text-4xl sm:text-5xl md:text-8xl font-black leading-[1.4] md:leading-[1.6] mb-10">
-              ابدأ رحلتك نحو <br />
-              <span class="text-brand-primary">جسم أقوى</span> ونظام حياة أفضل
+          <div class="relative z-20 max-w-7xl mx-auto px-6 w-full flex flex-col items-start gap-6 reveal mt-12">
+            <div class="inline-flex items-center gap-2 bg-surface-container/80 backdrop-blur-sm border border-outline-variant/50 rounded-full px-4 py-1.5 mb-2">
+              <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span class="text-xs font-semibold text-secondary tracking-widest uppercase">مستوى جديد من اللياقة</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-on-surface max-w-3xl leading-tight">
+              حول حياتك مع <br/>
+              <span class="text-primary">الانضباط العميق</span>
             </h1>
-            <p class="text-xl md:text-2xl text-on-surface/60 max-w-3xl mx-auto mb-16 leading-relaxed">
-              نحن لا نقدم مجرد تمارين، بل نصمم لك خارطة طريق متكاملة للوصول إلى النسخة الأفضل من ذاتك تحت إشراف نخبة من المتخصصين.
+            <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mb-4 leading-relaxed">
+              نظام تدريبي احترافي مصمم للنخبة. اكتشف قوة الالتزام في بيئة تدفعك لتجاوز حدودك، مدعوماً بأحدث تقنيات التحليل والمتابعة مع الكوتش يوسف محمد.
             </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href="https://wa.me/201029305002?text=أهلاً كوتش يوسف، أريد البدء في رحلتي مع نواة" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-12 py-5 bg-brand-primary text-surface-base font-bold rounded-2xl hover:bg-brand-secondary transition-all transform active:scale-95 shadow-xl shadow-brand-primary/20 text-center">
-                ابدأ الآن
+            <div class="flex flex-wrap gap-4 mt-2">
+              <a href="/plans.html" class="bg-primary text-background px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:bg-secondary transition-all glow-effect">
+                <span>انطلق في رحلتك</span>
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
               </a>
-              <a href="https://wa.me/201029305002?text=أهلاً كوتش يوسف، أريد معرفة المزيد عن خدمات نواة" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-12 py-5 border border-brand-primary/30 text-brand-primary font-bold rounded-2xl hover:bg-brand-primary/5 transition-all text-center">
-                تعرف علينا
+              <a href="/about.html" class="glass-panel text-on-surface px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 hover:bg-surface-container transition-all">
+                <span>اكتشف الفلسفة</span>
               </a>
             </div>
           </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
-          <div class="grid lg:grid-cols-[1.2fr_1fr] gap-12 md:gap-16 items-center bg-surface-card rounded-[2rem] p-6 md:p-16 border border-brand-primary/10">
-            <div class="relative order-2 lg:order-1 reveal-right">
-              <div class="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border-4 border-brand-primary/20 shadow-2xl">
-                <img 
-                  src="/youssef.jpeg" 
-                  alt="Professional Fitness Coach" 
-                  class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-surface-base/80 via-transparent to-transparent"></div>
-              </div>
-              <div class="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-10 w-20 h-20 md:w-40 md:h-40 bg-brand-primary rounded-full flex items-center justify-center p-4 md:p-6 shadow-2xl rotate-12">
-                <p class="text-surface-base font-black text-center text-[10px] md:text-sm leading-tight">5+ أعوام خبرة</p>
-              </div>
-            </div>
-
-            <div class="space-y-8 order-1 lg:order-2 reveal-left text-center lg:text-right">
-              <p class="text-xl md:text-2xl text-on-surface leading-relaxed font-medium">
-                أنا مدرب متخصص في تحسين الأداء البدني وإعادة تكوين الجسم، أساعدك في الوصول لأفضل نسخة من نفسك من خلال نهج علمي وعملي يركز على النتائج المستدامة.
-              </p>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/10 flex flex-col items-center gap-3 text-center transition-transform hover:-translate-y-1">
-                  <i data-lucide="dumbbell" class="w-8 h-8 text-brand-primary"></i>
-                  <span class="font-bold text-sm">برامج مخصصة</span>
+        <!-- Philosophy Section (Glassmorphism Bento) -->
+        <section class="py-16 relative z-10 -mt-16">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Card 1 -->
+              <div class="glass-panel rounded-2xl p-8 flex flex-col gap-4 transform hover:-translate-y-1 transition-transform duration-300 reveal">
+                <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary mb-2">
+                  <i data-lucide="zap" class="w-6 h-6 fill-current"></i>
                 </div>
-                <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/10 flex flex-col items-center gap-3 text-center transition-transform hover:-translate-y-1">
-                  <i data-lucide="utensils" class="w-8 h-8 text-brand-primary"></i>
-                  <span class="font-bold text-sm">نظام غذائي عملي</span>
-                </div>
-                <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/10 flex flex-col items-center gap-3 text-center transition-transform hover:-translate-y-1">
-                  <i data-lucide="line-chart" class="w-8 h-8 text-brand-primary"></i>
-                  <span class="font-bold text-sm">متابعة مستمرة</span>
-                </div>
-              </div>
-
-              <div class="pt-4 space-y-4">
-                <p class="text-brand-primary font-bold text-sm tracking-widest uppercase">التركيز دائمًا على:</p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-3">
-                  <span class="px-6 py-2 bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded-full text-sm font-bold">الاستمرارية</span>
-                  <span class="px-6 py-2 bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded-full text-sm font-bold">التقدم الحقيقي</span>
-                  <span class="px-6 py-2 bg-brand-primary/10 text-brand-primary border border-brand-primary/20 rounded-full text-sm font-bold">عادات قوية</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-        <!-- Transformation Section -->
-        <section id="results" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
-          <div class="text-center mb-12 md:mb-16 reveal">
-            <h2 class="text-3xl md:text-6xl font-black mb-6 italic text-brand-primary">نتائج التحول</h2>
-            <p class="text-xl md:text-2xl text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
-              شاهد الفرق الحقيقي في 3 أشهر فقط من الالتزام بنظام NAWA Coaching.
-            </p>
-          </div>
-
-          <div class="bg-surface-card rounded-[3rem] border border-brand-primary/10 p-6 md:p-12 reveal">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-              <div class="space-y-8 order-2 md:order-1 text-center md:text-right">
-                <div class="inline-flex items-center gap-3 px-6 py-2 bg-brand-primary/10 border border-brand-primary/20 rounded-full text-brand-primary font-black uppercase tracking-tighter text-sm">
-                  <i data-lucide="calendar" class="w-4 h-4"></i>
-                  رحلة الـ 90 يوماً
-                </div>
-                <h3 class="text-3xl md:text-5xl font-black leading-tight">كيف وصلنا لهذه <br/><span class="text-brand-primary">النتيجة؟</span></h3>
-                <p class="text-on-surface/60 text-lg leading-relaxed italic">
-                  "التغيير مبيحصلش بالصدفة، بيحصل بالتخطيط والالتزام. في ظرف 12 أسبوع قدرنا نوصل لشكل جسم مختلف تماماً، مش بس خسارة وزن، لكن إعادة رسم لشكل الجسم (Body Recomposition)."
+                <h3 class="text-2xl font-bold text-on-surface">القوة الكامنة</h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  بناء أساس صلب لا يعتمد على المعدات فقط، بل على إرادة حديدية وتكنيك مدروس بعناية فائقة.
                 </p>
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/5 text-center">
-                    <p class="text-brand-primary text-2xl font-black mb-1">100%</p>
-                    <p class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">نظام غذائي مخصص</p>
-                  </div>
-                  <div class="p-6 bg-surface-base rounded-2xl border border-brand-primary/5 text-center">
-                    <p class="text-brand-primary text-2xl font-black mb-1">3 أشهر</p>
-                    <p class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">فترة الالتزام</p>
-                  </div>
-                </div>
               </div>
+              <!-- Card 2 -->
+              <div class="glass-panel rounded-2xl p-8 flex flex-col gap-4 transform hover:-translate-y-1 transition-transform duration-300 md:-translate-y-4 reveal">
+                <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-2">
+                  <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-on-surface">التحمل المستدام</h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  تطوير قدرات الجهاز التنفسي والقلب بأساليب تحاكي التحديات الحقيقية، لتكون جاهزاً في كل الأوقات.
+                </p>
+              </div>
+              <!-- Card 3 -->
+              <div class="glass-panel rounded-2xl p-8 flex flex-col gap-4 transform hover:-translate-y-1 transition-transform duration-300 reveal">
+                <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary mb-2">
+                  <i data-lucide="smile" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-on-surface">التوازن الذهني</h3>
+                <p class="text-on-surface-variant leading-relaxed text-sm">
+                  الربط بين العقل والجسد. التدريب في نواة ليس مجرد حركة، بل هو حالة من التركيز العميق والتأمل الحركي.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-              <div class="relative group order-1 md:order-2">
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="relative overflow-hidden rounded-[2rem] border-2 border-white/5 shadow-2xl">
-                    <img src="/before.jpeg" alt="Before" class="w-full h-full object-cover aspect-[3/4] grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" />
-                    <div class="absolute bottom-4 left-4 px-4 py-1.5 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-bold text-white uppercase tracking-widest flex items-center gap-2">
-                      <span>قبل</span>
-                      <span class="w-px h-3 bg-white/20"></span>
-                      <span class="text-brand-secondary">92 كجم</span>
+        <!-- Why NAWA Section -->
+        <section class="py-24">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+              <div class="w-full lg:w-1/2 flex flex-col gap-8 reveal-right">
+                <h2 class="text-4xl md:text-5xl font-black text-on-surface">
+                  لماذا <span class="text-primary">نواة</span>؟
+                </h2>
+                <p class="text-lg text-on-surface-variant leading-relaxed">
+                  نحن لا نقدم مجرد مساحة للتدريب، بل نوفر منظومة متكاملة تدمج بين الرفاهية والأداء العالي في بيئة خالية من المشتتات.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                  <div class="flex items-start gap-4 p-4 bg-surface-container rounded-xl border border-transparent hover:border-outline-variant/30 transition-colors">
+                    <i data-lucide="line-chart" class="text-secondary w-6 h-6 mt-1"></i>
+                    <div>
+                      <h4 class="text-lg font-bold text-on-surface mb-1">تحليل متقدم</h4>
+                      <p class="text-on-surface-variant text-sm">متابعة دقيقة لكل حركة</p>
                     </div>
                   </div>
-                  <div class="relative overflow-hidden rounded-[2rem] border-2 border-brand-primary/30 shadow-2xl shadow-brand-primary/10">
-                    <img src="/after.jpeg" alt="After" class="w-full h-full object-cover aspect-[3/4] group-hover:scale-105 transition-all duration-700" />
-                    <div class="absolute bottom-4 left-4 px-4 py-1.5 bg-brand-primary rounded-full text-[10px] font-black text-surface-base uppercase tracking-widest flex items-center gap-2">
-                      <span>بعد</span>
-                      <span class="w-px h-3 bg-surface-base/20"></span>
-                      <span class="text-surface-base">77 كجم</span>
+                  <div class="flex items-start gap-4 p-4 bg-surface-container rounded-xl border border-transparent hover:border-outline-variant/30 transition-colors">
+                    <i data-lucide="users" class="text-secondary w-6 h-6 mt-1"></i>
+                    <div>
+                      <h4 class="text-lg font-bold text-on-surface mb-1">مجتمع النخبة</h4>
+                      <p class="text-on-surface-variant text-sm">تدرب مع من يشاركونك الشغف</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 p-4 bg-surface-container rounded-xl border border-transparent hover:border-outline-variant/30 transition-colors">
+                    <i data-lucide="utensils" class="text-secondary w-6 h-6 mt-1"></i>
+                    <div>
+                      <h4 class="text-lg font-bold text-on-surface mb-1">تغذية مخصصة</h4>
+                      <p class="text-on-surface-variant text-sm">خطط مدعومة علمياً</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start gap-4 p-4 bg-surface-container rounded-xl border border-transparent hover:border-outline-variant/30 transition-colors">
+                    <i data-lucide="activity" class="text-secondary w-6 h-6 mt-1"></i>
+                    <div>
+                      <h4 class="text-lg font-bold text-on-surface mb-1">استشفاء فاخر</h4>
+                      <p class="text-on-surface-variant text-sm">مرافق مصممة للتجديد</p>
                     </div>
                   </div>
                 </div>
-                <!-- Highlight badge -->
-                <div class="absolute -top-4 -right-4 md:-top-10 md:-right-10 w-20 h-20 md:w-32 md:h-32 bg-brand-primary rounded-full flex flex-col items-center justify-center p-2 md:p-4 shadow-2xl rotate-12 animate-pulse z-20">
-                  <span class="text-surface-base font-black text-xl md:text-3xl leading-none">90</span>
-                  <span class="text-surface-base font-bold text-[8px] md:text-xs uppercase tracking-tighter">يوم فقط</span>
-                </div>
+              </div>
+              <div class="w-full lg:w-1/2 relative h-[450px] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-outline-variant/20 reveal-left">
+                <img alt="Luxury Gym Facility" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR34xUogRc8GGQVEAAgLbxzrP1k-U8-QRwse9XIVR-9E7gxM726nkXEQZ89reFmCqPTB4lyQuP9UivSHU2S-F-j_zBaGvM9kBEdcUhRda6Q0g6qEpo8RKSS__2v_IIJ3j4bDPujZL1VbpZEqvjYdFUyglc_76tQcgwGcxbDWCbq_WST6oax-n2q6Dv_9gZwzhiJKyNh5YgrWwnKEXWFeKqKyihl4hiwtyh07SKpVbQZ4pS2BDKi_mpeux2m_MNHN9yuQyYTPE-P2E"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
               </div>
             </div>
           </div>
         </section>
-
-        <!-- Plans Section -->
-        <section id="plans" class="max-w-7xl mx-auto px-6 py-16 md:py-24">
-          <div class="text-center mb-12 md:mb-20">
-            <h2 class="text-3xl md:text-6xl font-black mb-6 italic">خطط التدريب (Coaching Plans)</h2>
-            <div class="h-1.5 w-24 bg-brand-primary mx-auto rounded-full"></div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <!-- 3 Months Plan (Foundation) -->
-            <div class="group relative p-8 rounded-[2rem] border bg-surface-card border-brand-primary/10 hover:border-brand-primary/40 transition-all duration-300 flex flex-col h-full reveal">
-              <h3 class="text-2xl font-black mb-1">3 شهور — خطة البداية</h3>
-              <p class="text-brand-primary text-sm font-bold mb-4">Foundation</p>
-              <p class="text-on-surface/50 text-sm mb-6 leading-relaxed">مناسبة للي عايز يبدأ بشكل جاد ويشوف نتائج أولية واضحة.</p>
-              
-              <div class="flex flex-col gap-1 mb-10">
-                <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-black text-brand-primary font-mono">1,500</span>
-                  <span class="text-xl font-bold text-brand-primary">£</span>
-                </div>
-              </div>
-
-              <div class="space-y-6 mb-12 flex-grow">
-                <div class="space-y-4">
-                  <p class="text-xs font-black uppercase tracking-widest text-on-surface/30">تشمل:</p>
-                  <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">برنامج تدريب مخصص</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">نظام غذائي مخصص</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">تحديثات مستمرة حسب التقدم</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">متابعة أسبوعية (Check-in)</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">دعم واتساب (رد خلال 24 ساعة)</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="pt-4 border-t border-brand-primary/10 text-center">
-                   <p class="text-xs font-black text-brand-primary uppercase mb-2">الهدف:</p>
-                   <p class="text-sm font-bold text-on-surface/60">بناء أساس قوي + بداية نتائج ملموسة</p>
-                </div>
-              </div>
-
-              <a href="https://wa.me/201029305002?text=أهلاً كوتش يوسف، أريد الاشتراك في خطة البداية (1500£)" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl font-black transition-all border border-brand-primary/40 text-brand-primary hover:bg-brand-primary hover:text-surface-base text-center">
-                اشترك الآن
-              </a>
-            </div>
-
-            <!-- 6 Months Plan (Transformation) -->
-            <div class="group relative p-8 rounded-[2rem] border bg-surface-base border-brand-primary md:scale-105 md:shadow-2xl md:shadow-brand-primary/10 transition-all duration-300 flex flex-col h-full reveal">
-              <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
-                أفضل قيمة
-              </div>
-              <h3 class="text-2xl font-black mb-1">6 شهور — خطة التحول</h3>
-              <p class="text-brand-primary text-sm font-bold mb-4">Transformation</p>
-              <p class="text-on-surface/50 text-sm mb-6 leading-relaxed">هنا تبدأ الشغل الحقيقي، مش مجرد تجربة.</p>
-
-              <div class="flex flex-col gap-1 mb-10">
-                <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-black text-brand-primary font-mono">2,500</span>
-                  <span class="text-xl font-bold text-brand-primary">£</span>
-                </div>
-              </div>
-
-              <div class="space-y-6 mb-12 flex-grow">
-                <div class="space-y-4">
-                  <p class="text-xs font-black uppercase tracking-widest text-on-surface/30">تشمل كل ما سبق +:</p>
-                  <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">مكالمة صوتية أسبوعية</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">متابعة أدق وتعديلات أسرع</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">أولوية في الرد على واتساب</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">توجيه في العادات (نوم، التزام)</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="pt-4 border-t border-brand-primary/10 text-center">
-                   <p class="text-xs font-black text-brand-primary uppercase mb-2">الهدف:</p>
-                   <p class="text-sm font-bold text-on-surface/60">تحول واضح في الجسم والعادات</p>
-                </div>
-              </div>
-
-              <a href="https://wa.me/201029305002?text=أهلاً كوتش يوسف، أريد الاشتراك في خطة التحول (2500£)" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl font-black transition-all bg-brand-primary text-surface-base hover:bg-brand-secondary text-center">
-                اشترك الآن
-              </a>
-            </div>
-
-            <!-- 12 Months Plan (Mastery) -->
-            <div class="group relative p-8 rounded-[2rem] border bg-surface-card border-brand-primary/10 hover:border-brand-primary/40 transition-all duration-300 flex flex-col h-full reveal">
-              <h3 class="text-2xl font-black mb-1">6 شهور — خطة الإتقان</h3>
-              <p class="text-brand-primary text-sm font-bold mb-4">Mastery</p>
-              <p class="text-on-surface/50 text-sm mb-6 leading-relaxed">دي للناس اللي مش عايزة ترجع لنقطة الصفر تاني.</p>
-
-              <div class="flex flex-col gap-1 mb-10">
-                <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-black text-brand-primary font-mono">4,000</span>
-                  <span class="text-xl font-bold text-brand-primary">£</span>
-                </div>
-              </div>
-
-              <div class="space-y-6 mb-12 flex-grow">
-                <div class="space-y-4">
-                  <p class="text-xs font-black uppercase tracking-widest text-on-surface/30">تشمل كل ما سبق +:</p>
-                  <ul class="space-y-4">
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">مكالمة فيديو 1:1 شهرية</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">تخطيط طويل المدى مخصص</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">متابعة كاملة للسلوك والتطور</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <i data-lucide="plus-circle" class="w-5 h-5 text-brand-primary shrink-0 mt-0.5"></i>
-                      <span class="text-sm font-medium text-on-surface/80">أعلى أولوية في الدعم</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div class="pt-4 border-t border-brand-primary/10 text-center">
-                   <p class="text-xs font-black text-brand-primary uppercase mb-2">الهدف:</p>
-                   <p class="text-sm font-bold text-on-surface/60">تثبيت أسلوب حياة + نتائج مستدامة</p>
-                </div>
-              </div>
-
-              <a href="https://wa.me/201029305002?text=أهلاً كوتش يوسف، أريد الاشتراك في خطة الإتقان (4000£)" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl font-black transition-all border border-brand-primary/40 text-brand-primary hover:bg-brand-primary hover:text-surface-base text-center">
-                اشترك الآن
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Payment Methods Section -->
-        <section class="max-w-7xl mx-auto px-6 py-12">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl font-black">طرق الدفع</h2>
-          </div>
-          <div class="flex justify-center">
-            <div class="p-10 bg-surface-card rounded-3xl border border-brand-primary/10 flex flex-col items-center text-center gap-4 transition-all hover:border-brand-primary/30 max-w-xl w-full">
-              <div class="p-4 bg-brand-primary/10 rounded-2xl">
-                <i data-lucide="wallet" class="w-8 h-8 text-brand-primary"></i>
-              </div>
-              <h3 class="text-2xl font-black">دفع كامل</h3>
-              <p class="text-on-surface/50 leading-relaxed">
-                سداد قيمة الباقة المختارة بالكامل عند بداية الاشتراك للحصول على وصول فوري لكافة المميزات.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Refund Policy & Terms -->
-        <section class="max-w-7xl mx-auto px-6 py-24 space-y-16">
-          <!-- Refund Policy -->
-          <div class="bg-surface-card rounded-[2.5rem] p-10 md:p-16 border border-brand-primary/10 overflow-hidden relative reveal">
-            <div class="absolute top-0 left-0 w-1/3 h-full bg-brand-primary/5 -skew-x-12 -ml-20 pointer-events-none"></div>
-            <div class="relative z-10">
-              <h2 class="text-3xl font-black text-brand-primary mb-8 flex items-center gap-4">
-                <i data-lucide="refresh-ccw" class="w-8 h-8"></i>
-                سياسة الاسترجاع
-              </h2>
-              <div class="grid lg:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                  <p class="text-xl font-bold leading-relaxed">نهدف إلى تقديم تجربة واضحة وعادلة للجميع.</p>
-                  <ul class="space-y-4 text-on-surface/70 leading-relaxed">
-                    <li class="flex items-start gap-3">
-                      <div class="w-2 h-2 bg-brand-primary rounded-full mt-2.5 shrink-0"></div>
-                      <span>يمكن طلب استرجاع كامل المبلغ خلال أول 14 يومًا من تاريخ بدء الخطة، دون الحاجة لتقديم مبررات.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <div class="w-2 h-2 bg-brand-primary rounded-full mt-2.5 shrink-0"></div>
-                      <span>يُشترط تقديم طلب الاسترجاع خلال هذه المدة.</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                      <div class="w-2 h-2 bg-brand-primary rounded-full mt-2.5 shrink-0"></div>
-                      <span>بعد مرور 14 يومًا، لا يمكن استرجاع أي مبالغ، نظرًا لبدء تنفيذ البرنامج وتقديم المتابعة بشكل فعلي.</span>
-                    </li>
-                  </ul>
-                  <p class="pt-4 text-brand-primary font-bold">شراءك للخدمة يعني موافقتك على هذه السياسة.</p>
-                </div>
-                <div class="bg-surface-base/50 p-8 rounded-3xl border border-brand-primary/20 backdrop-blur-sm">
-                  <div class="flex items-center gap-3 mb-4 text-brand-primary">
-                    <i data-lucide="info" class="w-6 h-6"></i>
-                    <span class="font-bold">تنبيه هام</span>
-                  </div>
-                  <p class="text-sm text-on-surface/50 leading-relaxed">
-                    نحن نلتزم بتقديم أعلى جودة من المتابعة والبرامج المخصصة، لذا فإن فترة الـ 14 يوم هي فرصتك لتقييم جودة الخدمة ومدى ملاءمتها لك.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Terms and Conditions -->
-          <div class="bg-surface-card rounded-[2.5rem] p-10 md:p-16 border border-brand-primary/10 reveal">
-            <h2 class="text-3xl font-black text-brand-primary mb-12 flex items-center gap-4">
-              <i data-lucide="file-text" class="w-8 h-8"></i>
-              الشروط والأحكام
-            </h2>
-            <p class="text-lg font-medium mb-10 text-on-surface/60 italic">باستخدامك للخدمة، فإنك توافق على ما يلي:</p>
-            
-            <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">1</span>
-                  طبيعة الخدمة
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">الخدمة المقدمة هي برامج تدريب وتغذية مخصصة، مع متابعة مستمرة، بهدف مساعدتك على الوصول إلى هدفك.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">2</span>
-                  النتائج
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">النتائج تختلف من شخص لآخر، وتعتمد بشكل أساسي على مدى الالتزام بالتعليمات. لا يتم ضمان تحقيق نتائج محددة.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">3</span>
-                  التزامات المستخدم
-                </h3>
-                <ul class="text-on-surface/60 text-sm leading-relaxed space-y-1 mr-10">
-                  <li>• الالتزام بالبرنامج والتعليمات</li>
-                  <li>• المتابعة المنتظمة</li>
-                  <li>• تقديم معلومات دقيقة وصحيحة عند التسجيل</li>
-                </ul>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">4</span>
-                  الاستبيان (Google Form)
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">يتم جمع المعلومات الأساسية من خلال نموذج مخصص قبل بدء الخطة. المستخدم مسؤول عن دقة المعلومات المقدمة.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">5</span>
-                  المسؤولية الصحية
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">يُفضل استشارة طبيب قبل بدء أي برنامج تدريبي أو غذائي، خاصة في حال وجود أي حالة صحية.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">6</span>
-                  حدود المسؤولية
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">لا يتحمل مقدم الخدمة مسؤولية أي إصابات ناتجة عن سوء تطبيق التمارين أو عدم الالتزام بالتعليمات.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">7</span>
-                  التواصل والدعم
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">التواصل يتم عبر واتساب ويتم الرد خلال 24 ساعة كحد أقصى. المتابعة تكون بشكل منتظم وفق نظام البرنامج.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">8</span>
-                  الدفع
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">يبدأ تنفيذ الخطة بعد تأكيد الدفع بالكامل.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">9</span>
-                  الملكية الفكرية
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">جميع البرامج والمحتوى مخصصة للاستخدام الشخصي فقط، ولا يجوز مشاركتها أو إعادة بيعها.</p>
-              </div>
-
-              <div class="space-y-4">
-                <h3 class="text-xl font-bold text-brand-primary flex items-center gap-2">
-                  <span class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center text-sm">10</span>
-                  إيقاف الخدمة
-                </h3>
-                <p class="text-on-surface/60 text-sm leading-relaxed">يحق لمقدم الخدمة إيقاف الخدمة في حال إساءة الاستخدام أو مخالفة الشروط.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Process Steps -->
-        <section class="max-w-7xl mx-auto px-6 py-32 text-center">
-          <h2 class="text-4xl md:text-6xl font-black mb-24 italic">كيف يعمل النظام؟</h2>
-          
-          <div class="relative grid md:grid-cols-3 gap-16 md:gap-8">
-            <div class="hidden md:block absolute top-12 left-10 right-10 h-0.5 bg-brand-primary/10 -z-10"></div>
-            
-            <div class="flex flex-col items-center gap-6 reveal">
-              <div class="w-24 h-24 rounded-full bg-brand-primary flex items-center justify-center text-3xl font-black text-surface-base shadow-2xl ring-8 ring-brand-primary/10">
-                1
-              </div>
-              <h3 class="text-2xl font-black">الانضمام عبر واتساب</h3>
-              <p class="text-on-surface/50 max-w-[200px] leading-relaxed italic">تواصل معنا مباشرة لتحديد الباقة والبدء فوراً.</p>
-            </div>
-            <div class="flex flex-col items-center gap-6 reveal">
-              <div class="w-24 h-24 rounded-full bg-brand-primary flex items-center justify-center text-3xl font-black text-surface-base shadow-2xl ring-8 ring-brand-primary/10">
-                2
-              </div>
-              <h3 class="text-2xl font-black">استلام خطة مخصصة</h3>
-              <p class="text-on-surface/50 max-w-[200px] leading-relaxed italic">خطة تدريب وتغذية مصممة خصيصاً لأهدافك.</p>
-            </div>
-            <div class="flex flex-col items-center gap-6 reveal">
-              <div class="w-24 h-24 rounded-full bg-brand-primary flex items-center justify-center text-3xl font-black text-surface-base shadow-2xl ring-8 ring-brand-primary/10">
-                3
-              </div>
-              <h3 class="text-2xl font-black">متابعة وتعديلات</h3>
-              <p class="text-on-surface/50 max-w-[200px] leading-relaxed italic">متابعة أسبوعية وتعديلات مستمرة لضمان أفضل النتائج.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Contact CTA -->
-        <section id="contact" class="max-w-5xl mx-auto px-6 py-24">
-          <div class="bg-gradient-to-br from-brand-primary to-green-600 p-12 md:p-20 rounded-[3rem] text-center shadow-2xl shadow-brand-primary/30 relative overflow-hidden group reveal-scale">
-            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-            <div class="relative z-10 hover:scale-[1.02] transition-transform duration-300">
-              <h2 class="text-4xl md:text-5xl font-black text-surface-base mb-6">لديك استفسار؟ <br/> نحن هنا للمساعدة</h2>
-              <p class="text-surface-base/80 text-xl font-medium mb-12 max-w-xl mx-auto italic">
-                تواصل معنا مباشرة عبر الواتساب للحصول على استشارة سريعة بخصوص الباقة الأنسب لك ولأهدافك.
-              </p>
-              <a href="https://wa.me/201029305002?text=أهلاً كوتش يوسف، لدي استفسار بخصوص باقات التدريب" target="_blank" rel="noopener noreferrer" class="bg-white text-green-600 px-12 py-5 rounded-full font-black text-xl flex items-center gap-4 mx-auto hover:bg-slate-50 transition-all shadow-xl group-hover:shadow-white/20 w-fit">
-                <i data-lucide="message-circle" class="w-8 h-8 fill-green-600 text-green-600"></i>
-                تواصل عبر واتساب
-              </a>
-            </div>
-          </div>
-        </section>
-        </div> <!-- End of home-view -->
-
-        <!-- Calculator View -->
-        <div id="calculator-view" class="hidden max-w-4xl mx-auto px-6 py-12 md:py-20 transition-opacity duration-300">
-          <div class="text-center mb-12 reveal">
-            <h2 class="text-3xl md:text-6xl font-black mb-6 italic text-brand-primary">حاسبة السعرات الحرارية</h2>
-            <p class="text-xl text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
-              احسب احتياج جسمك اليومي من السعرات الحرارية والمغذيات الكبرى بدقة علمية بناءً على مستوى نشاطك وهدفك البدني.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8 items-start reveal">
-            <!-- Inputs Card -->
-            <div class="glass-card p-8 rounded-[2rem] border border-brand-primary/10 space-y-6">
-              <h3 class="text-xl font-black border-b border-brand-primary/10 pb-4 text-brand-primary flex items-center gap-2">
-                <i data-lucide="info" class="w-5 h-5"></i>
-                بياناتك الشخصية
-              </h3>
-
-              <form id="calorie-form" class="space-y-6">
-                <!-- Gender Section -->
-                <div class="space-y-3">
-                  <label class="text-sm font-bold text-on-surface/80 block">الجنس</label>
-                  <div class="grid grid-cols-2 gap-4">
-                    <label class="relative flex items-center justify-center p-4 rounded-xl border border-brand-primary/10 bg-surface-base/50 cursor-pointer hover:border-brand-primary/30 transition-all group">
-                      <input type="radio" name="gender" value="male" class="peer hidden" checked>
-                      <div class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-brand-primary transition-all pointer-events-none"></div>
-                      <div class="flex items-center gap-3">
-                        <i data-lucide="user" class="w-5 h-5 text-on-surface/40 peer-checked:text-brand-primary group-hover:scale-110 transition-transform"></i>
-                        <span class="font-bold text-sm">ذكر</span>
-                      </div>
-                    </label>
-                    <label class="relative flex items-center justify-center p-4 rounded-xl border border-brand-primary/10 bg-surface-base/50 cursor-pointer hover:border-brand-primary/30 transition-all group">
-                      <input type="radio" name="gender" value="female" class="peer hidden">
-                      <div class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-brand-primary transition-all pointer-events-none"></div>
-                      <div class="flex items-center gap-3">
-                        <i data-lucide="user" class="w-5 h-5 text-on-surface/40 peer-checked:text-brand-primary group-hover:scale-110 transition-transform"></i>
-                        <span class="font-bold text-sm">أنثى</span>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-
-                <!-- Age, Height, Weight inputs -->
-                <div class="grid grid-cols-3 gap-4">
-                  <div class="space-y-2">
-                    <label for="age" class="text-xs font-bold text-on-surface/80 block">العمر (سنة)</label>
-                    <input type="number" id="age" required min="10" max="100" placeholder="25" class="w-full p-4 rounded-xl bg-surface-base border border-brand-primary/10 focus:border-brand-primary focus:outline-none font-mono text-center text-lg transition-all text-on-surface">
-                  </div>
-                  <div class="space-y-2">
-                    <label for="height" class="text-xs font-bold text-on-surface/80 block">الطول (سم)</label>
-                    <input type="number" id="height" required min="100" max="250" placeholder="175" class="w-full p-4 rounded-xl bg-surface-base border border-brand-primary/10 focus:border-brand-primary focus:outline-none font-mono text-center text-lg transition-all text-on-surface">
-                  </div>
-                  <div class="space-y-2">
-                    <label for="weight" class="text-xs font-bold text-on-surface/80 block">الوزن (كجم)</label>
-                    <input type="number" id="weight" required min="30" max="300" placeholder="75" class="w-full p-4 rounded-xl bg-surface-base border border-brand-primary/10 focus:border-brand-primary focus:outline-none font-mono text-center text-lg transition-all text-on-surface">
-                  </div>
-                </div>
-
-                <!-- Activity Level -->
-                <div class="space-y-2">
-                  <label for="activity" class="text-sm font-bold text-on-surface/80 block">مستوى النشاط اليومي</label>
-                  <select id="activity" class="w-full p-4 rounded-xl bg-surface-base border border-brand-primary/10 focus:border-brand-primary focus:outline-none text-sm transition-all cursor-pointer text-on-surface">
-                    <option value="1.2">خامل (عمل مكتبي / لا توجد تمارين)</option>
-                    <option value="1.375" selected>نشاط خفيف (تمارين خفيفة 1-3 أيام/أسبوع)</option>
-                    <option value="1.55">نشاط متوسط (تمارين متوسطة 3-5 أيام/أسبوع)</option>
-                    <option value="1.725">نشاط عالي (تمارين شاقة 6-7 أيام/أسبوع)</option>
-                    <option value="1.9">نشاط عالي جداً (رياضي محترف / عمل بدني شاق جداً)</option>
-                  </select>
-                </div>
-
-                <!-- Physical Goal -->
-                <div class="space-y-3">
-                  <label class="text-sm font-bold text-on-surface/80 block">الهدف البدني</label>
-                  <div class="flex flex-col gap-3">
-                    <label class="relative flex items-center justify-between p-4 rounded-xl border border-brand-primary/10 bg-surface-base/50 cursor-pointer hover:border-brand-primary/30 transition-all group">
-                      <input type="radio" name="goal" value="loss" class="peer hidden" checked>
-                      <div class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-brand-primary transition-all pointer-events-none"></div>
-                      <div class="flex items-center gap-3">
-                        <i data-lucide="trending-down" class="w-5 h-5 text-brand-primary"></i>
-                        <div class="text-right">
-                          <p class="font-bold text-sm">خسارة دهون (تنشيف)</p>
-                          <p class="text-[10px] text-on-surface/40">حرق الدهون مع الحفاظ على الكتلة العضلية</p>
-                        </div>
-                      </div>
-                    </label>
-                    <label class="relative flex items-center justify-between p-4 rounded-xl border border-brand-primary/10 bg-surface-base/50 cursor-pointer hover:border-brand-primary/30 transition-all group">
-                      <input type="radio" name="goal" value="maintain" class="peer hidden">
-                      <div class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-brand-primary transition-all pointer-events-none"></div>
-                      <div class="flex items-center gap-3">
-                        <i data-lucide="activity" class="w-5 h-5 text-brand-primary"></i>
-                        <div class="text-right">
-                          <p class="font-bold text-sm">المحافظة على الوزن</p>
-                          <p class="text-[10px] text-on-surface/40">تثبيت الوزن الحالي وتحسين الأداء البدني</p>
-                        </div>
-                      </div>
-                    </label>
-                    <label class="relative flex items-center justify-between p-4 rounded-xl border border-brand-primary/10 bg-surface-base/50 cursor-pointer hover:border-brand-primary/30 transition-all group">
-                      <input type="radio" name="goal" value="gain" class="peer hidden">
-                      <div class="absolute inset-0 rounded-xl border-2 border-transparent peer-checked:border-brand-primary transition-all pointer-events-none"></div>
-                      <div class="flex items-center gap-3">
-                        <i data-lucide="trending-up" class="w-5 h-5 text-brand-primary"></i>
-                        <div class="text-right">
-                          <p class="font-bold text-sm">بناء عضلات (تضخيم)</p>
-                          <p class="text-[10px] text-on-surface/40">زيادة الوزن بذكاء وبناء نسيج عضلي جديد</p>
-                        </div>
-                      </div>
-                    </label>
-                  </div>
-                </div>
-
-                <button type="submit" class="w-full py-4 bg-brand-primary text-surface-base font-black rounded-xl hover:bg-brand-secondary transition-all transform active:scale-95 shadow-xl shadow-brand-primary/20 flex items-center justify-center gap-2 cursor-pointer">
-                  <i data-lucide="calculator" class="w-5 h-5"></i>
-                  احسب احتياجك الآن
-                </button>
-              </form>
-            </div>
-
-            <!-- Results Card (hidden by default) -->
-            <div id="calculator-results" class="hidden glass-card p-8 rounded-[2rem] border border-brand-primary/30 bg-surface-card/90 space-y-6 relative overflow-hidden transition-all duration-500">
-              <h3 class="text-xl font-black border-b border-brand-primary/10 pb-4 text-brand-primary flex items-center gap-2">
-                <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
-                نتيجتك المخصصة
-              </h3>
-
-              <div class="text-center py-6 bg-surface-base/50 rounded-2xl border border-brand-primary/5">
-                <p class="text-xs text-on-surface/40 uppercase tracking-widest mb-1">سعراتك اليومية المستهدفة</p>
-                <div class="flex items-baseline justify-center gap-2">
-                  <span id="target-calories" class="text-5xl md:text-6xl font-black text-brand-primary font-mono">2,400</span>
-                  <span class="text-xl font-bold text-on-surface/60">سعرة</span>
-                </div>
-              </div>
-
-              <!-- Extra info (BMR & TDEE) -->
-              <div class="grid grid-cols-2 gap-4 text-center">
-                <div class="p-3 bg-surface-base/30 rounded-xl border border-white/5">
-                  <p class="text-[10px] text-on-surface/40">معدل الأيض الأساسي BMR</p>
-                  <p class="text-sm font-bold font-mono mt-1"><span id="result-bmr">1700</span> سعرة</p>
-                </div>
-                <div class="p-3 bg-surface-base/30 rounded-xl border border-white/5">
-                  <p class="text-[10px] text-on-surface/40">إجمالي الحرق اليومي TDEE</p>
-                  <p class="text-sm font-bold font-mono mt-1"><span id="result-tdee">2800</span> سعرة</p>
-                </div>
-              </div>
-
-              <!-- Macros Breakdown -->
-              <div class="space-y-4">
-                <h4 class="text-sm font-bold text-on-surface/80 text-right">توزيع المغذيات الكبرى (Macros)</h4>
-                
-                <!-- Protein Progress Bar -->
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-xs font-bold">
-                    <span class="text-brand-secondary flex items-center gap-1">
-                      <span class="w-2.5 h-2.5 rounded-full bg-brand-secondary"></span>
-                      البروتين
-                    </span>
-                    <span class="font-mono"><span id="macro-protein">165</span> غرام (<span id="macro-protein-kcal">660</span> سعرة)</span>
-                  </div>
-                  <div class="w-full h-3 bg-surface-base rounded-full overflow-hidden">
-                    <div id="bar-protein" class="h-full bg-brand-secondary rounded-full" style="width: 30%"></div>
-                  </div>
-                </div>
-
-                <!-- Carbs Progress Bar -->
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-xs font-bold">
-                    <span class="text-brand-primary flex items-center gap-1">
-                      <span class="w-2.5 h-2.5 rounded-full bg-brand-primary"></span>
-                      الكربوهيدرات
-                    </span>
-                    <span class="font-mono"><span id="macro-carbs">240</span> غرام (<span id="macro-carbs-kcal">960</span> سعرة)</span>
-                  </div>
-                  <div class="w-full h-3 bg-surface-base rounded-full overflow-hidden">
-                    <div id="bar-carbs" class="h-full bg-brand-primary rounded-full" style="width: 50%"></div>
-                  </div>
-                </div>
-
-                <!-- Fats Progress Bar -->
-                <div class="space-y-1.5">
-                  <div class="flex justify-between text-xs font-bold">
-                    <span class="text-red-400 flex items-center gap-1">
-                      <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                      الدهون الصحية
-                    </span>
-                    <span class="font-mono"><span id="macro-fats">67</span> غرام (<span id="macro-fats-kcal">600</span> سعرة)</span>
-                  </div>
-                  <div class="w-full h-3 bg-surface-base rounded-full overflow-hidden">
-                    <div id="bar-fats" class="h-full bg-red-400 rounded-full" style="width: 20%"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Action CTA -->
-              <div class="pt-4 border-t border-brand-primary/10 space-y-4">
-                <p class="text-xs text-on-surface/50 text-center leading-relaxed">
-                  هذه الأرقام تقريبية مبنية على البيانات المدخلة. للوصول لأفضل نتائج، تحتاج لنظام تدريب ومتابعة أسبوعي مخصص.
-                </p>
-                <a id="whatsapp-calc-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-green-500 text-white font-black rounded-xl hover:bg-green-600 transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/10 text-center">
-                  <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
-                  أرسل نتيجتي للكوتش وابدأ برنامجي
-                </a>
-              </div>
-            </div>
-
-            <!-- Placeholder results -->
-            <div id="calculator-placeholder" class="glass-card p-8 rounded-[2rem] border border-brand-primary/5 bg-surface-card/50 text-center py-20 flex flex-col items-center justify-center gap-4">
-              <div class="w-16 h-16 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary">
-                <i data-lucide="activity" class="w-8 h-8"></i>
-              </div>
-              <h4 class="text-lg font-black text-on-surface/80">في انتظار بياناتك</h4>
-              <p class="text-sm text-on-surface/40 max-w-[240px] mx-auto leading-relaxed">
-                املأ الحقول في النموذج واضغط على زر الحساب لعرض تقريرك المخصص هنا.
-              </p>
-            </div>
-          </div>
-        </div>
       </main>
 
-      <!-- Footer -->
-      <footer class="bg-surface-base border-t border-brand-primary/10 pt-24 pb-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-right">
-          <div class="space-y-6">
-            <div class="flex items-center justify-center md:justify-start gap-4">
-              <i data-lucide="dumbbell" class="w-10 h-10 text-brand-primary"></i>
-              <span class="text-3xl font-black tracking-tighter">NAWA ELITE</span>
-            </div>
-            <p class="text-on-surface/30 font-medium italic">Transforming lives through science and sweat.</p>
-          </div>
-
-          <div class="flex flex-wrap justify-center gap-8 text-sm font-black uppercase tracking-widest text-on-surface/60">
-            <a href="#" class="hover:text-brand-primary transition-colors">الرئيسية</a>
-            <a href="#about" class="hover:text-brand-primary transition-colors">عن الكوتش</a>
-            <a href="#results" class="hover:text-brand-primary transition-colors">نتائجنا</a>
-            <a href="#plans" class="hover:text-brand-primary transition-colors">خطط التدريب</a>
-            <a href="#contact" class="hover:text-brand-primary transition-colors">اتصل بنا</a>
-          </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-on-surface/20 uppercase tracking-widest">
-          <p>© 2024 NAWA COACHING. ALL RIGHTS RESERVED.</p>
-          <div class="flex gap-4">
-            <p>DESIGNED FOR PERFORMANCE</p>
-            <p>BUILT FOR RESULTS</p>
-          </div>
-        </div>
-      </footer>
-      <!-- Floating WhatsApp Button -->
-      <a 
-        href="https://wa.me/201029305002" 
-        target="_blank" 
-        class="fixed bottom-8 left-8 z-[100] bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 group"
-        aria-label="WhatsApp"
-      >
-        <i data-lucide="message-circle" class="w-8 h-8 fill-white"></i>
-        <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-surface-card text-on-surface px-4 py-2 rounded-xl text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-brand-primary/20 shadow-xl">
-          تواصل معنا
-        </span>
-      </a>
-
-      <!-- Mobile Menu Sidebar -->
-      <div id="mobile-menu-backdrop" class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
-      
-      <div id="mobile-menu" class="fixed inset-y-0 right-0 z-[110] w-full max-w-[280px] bg-[#0b1f1a] border-l border-brand-primary/20 translate-x-full transition-transform duration-500 md:hidden sidebar-shadow">
-        <div class="flex flex-col h-full overflow-y-auto">
-          <!-- Sidebar Header -->
-          <div class="p-6 flex justify-between items-center border-b border-white/5 bg-[#132a24]/50 backdrop-blur-md sticky top-0 z-10">
-            <span class="text-xl font-black text-on-surface">NAWA <span class="text-brand-primary">نواة</span></span>
-            <button id="close-menu-btn" class="p-2 text-brand-primary hover:bg-brand-primary/10 rounded-xl transition-colors">
-              <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-          </div>
-          
-          <!-- Sidebar Links -->
-          <nav class="flex flex-col p-4 gap-2">
-            <a href="#" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
-              <div class="w-10 h-10 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
-                <i data-lucide="home" class="w-5 h-5"></i>
-              </div>
-              <span class="text-lg font-bold text-on-surface group-hover:text-brand-primary transition-colors">الرئيسية</span>
-            </a>
-            
-            <a href="#about" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
-              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
-                <i data-lucide="user" class="w-5 h-5"></i>
-              </div>
-              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">عن الكوتش</span>
-            </a>
-            
-            <a href="#results" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
-              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
-                <i data-lucide="trophy" class="w-5 h-5"></i>
-              </div>
-              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">نتائجنا</span>
-            </a>
-            
-            <a href="#plans" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
-              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
-                <i data-lucide="layout-grid" class="w-5 h-5"></i>
-              </div>
-              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">الخطط</span>
-            </a>
-            
-            <a href="#calculator" id="mobile-nav-calculator" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
-              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
-                <i data-lucide="calculator" class="w-5 h-5"></i>
-              </div>
-              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">احسب سعراتك</span>
-            </a>
-
-            <a href="#contact" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-brand-primary/10 group">
-              <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-brand-primary group-hover:text-surface-base transition-all">
-                <i data-lucide="message-circle" class="w-5 h-5"></i>
-              </div>
-              <span class="text-lg font-bold text-on-surface/60 group-hover:text-brand-primary transition-colors">اتصل بنا</span>
-            </a>
-          </nav>
-
-          <!-- Sidebar Footer -->
-          <div class="mt-auto p-6 border-t border-white/5 bg-[#132a24]/30">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="relative">
-                <div class="w-12 h-12 rounded-full border-2 border-brand-primary p-0.5">
-                  <img src="/youssef.jpeg" alt="Coach" class="w-full h-full object-cover rounded-full" />
-                </div>
-                <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-brand-primary rounded-full border-2 border-[#0b1f1a]"></div>
-              </div>
-              <div class="text-right">
-                <p class="text-[10px] text-on-surface/40 uppercase font-mono tracking-widest leading-none mb-1">Coach</p>
-                <p class="text-sm font-bold text-on-surface">يوسف محمد</p>
-              </div>
-            </div>
-            <a href="https://wa.me/201029305002" class="flex items-center justify-center gap-3 w-full py-4 bg-brand-primary text-surface-base font-black rounded-xl text-center shadow-lg shadow-brand-primary/20 hover:bg-brand-secondary transition-all active:scale-95">
-              <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
-              ابدأ رحلتك الآن
-            </a>
-          </div>
-        </div>
-      </div>
+      <!-- Shared Footer -->
+      <footer class="bg-background border-t border-primary/10 pt-20 pb-10 px-6"></footer>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
-
