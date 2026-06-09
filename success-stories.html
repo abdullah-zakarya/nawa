@@ -105,46 +105,176 @@
           </div>
         </section>
 
-        <!-- Testimonial Section (Single Premium Testimonial) -->
-        <section class="max-w-[800px] mx-auto px-6 py-20">
+        <!-- Testimonial Section (Premium Carousel) -->
+        <section class="w-full overflow-hidden py-20 relative bg-surface-container-lowest/20 border-y border-outline-variant/10">
           <div class="text-center mb-12 reveal">
             <h3 class="text-3xl font-black text-white mb-2">أصوات من الميدان</h3>
             <p class="text-sm text-on-surface-variant font-medium">تجارب حقيقية من أعضاء مجتمع NAWA</p>
           </div>
 
-          <div class="bg-surface-container rounded-3xl p-8 md:p-12 border border-outline-variant/20 hover:border-primary/30 transition-all duration-300 relative overflow-hidden group shadow-2xl reveal-scale">
-            <!-- Top decorative quote icon -->
-            <i data-lucide="quote" class="text-primary/10 w-24 h-24 absolute left-6 top-6 pointer-events-none"></i>
+          <!-- Carousel Container (Forced to LTR for reliable translation math, children are RTL) -->
+          <div class="relative w-full overflow-hidden" dir="ltr" id="testimonial-carousel">
             
-            <div class="flex flex-col items-center text-center relative z-10">
-              <!-- Cartoonish/Vector Avatar -->
-              <div class="w-24 h-24 rounded-full border-2 border-primary/30 p-1 mb-6 flex items-center justify-center bg-background/50 shadow-inner">
-                <svg class="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Background -->
-                  <circle cx="50" cy="50" r="46" fill="#132a24" stroke="#22c55e" stroke-width="2" stroke-opacity="0.3"/>
-                  <!-- Body/Shoulders -->
-                  <path d="M25 82C25 72 32 64 50 64C68 64 75 72 75 82" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
-                  <!-- Head -->
-                  <circle cx="50" cy="42" r="16" stroke="#22c55e" stroke-width="4" fill="#132a24"/>
-                  <!-- Trainee Cap / Accent -->
-                  <path d="M34 42C34 33 42 30 50 30C58 30 66 33 66 42" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
-                </svg>
-              </div>
+            <!-- Viewport -->
+            <div id="testimonial-viewport" class="max-w-[1200px] mx-auto overflow-hidden relative px-4 md:px-0">
+              
+              <!-- Track -->
+              <div class="flex relative transition-transform duration-700 will-change-transform py-4" id="testimonial-track">
+                
+                <!-- Testimonial 1 -->
+                <div class="flex-shrink-0 w-full md:w-[70%] max-w-[650px] px-4 transition-all duration-700 ease-out select-none cursor-pointer testimonial-slide" data-index="0">
+                  <div dir="rtl" class="testimonial-card bg-surface-container rounded-3xl p-6 md:p-10 border border-outline-variant/20 hover:border-primary/30 transition-all duration-500 relative overflow-hidden group shadow-2xl flex flex-col h-full">
+                    <!-- Top decorative quote icon -->
+                    <i data-lucide="quote" class="text-primary/10 w-20 h-20 absolute left-6 top-6 pointer-events-none"></i>
+                    
+                    <div class="flex flex-col items-center text-center relative z-10 h-full">
+                      <!-- Avatar -->
+                      <div class="w-20 h-20 rounded-full border-2 border-primary/30 p-1 mb-4 flex items-center justify-center bg-background/50 shadow-inner">
+                        <svg class="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="50" cy="50" r="46" fill="#132a24" stroke="#22c55e" stroke-width="2" stroke-opacity="0.3"/>
+                          <path d="M25 82C25 72 32 64 50 64C68 64 75 72 75 82" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+                          <circle cx="50" cy="42" r="16" stroke="#22c55e" stroke-width="4" fill="#132a24"/>
+                          <path d="M34 42C34 33 42 30 50 30C58 30 66 33 66 42" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                      </div>
 
-              <!-- Rating -->
-              <div class="flex text-primary mb-6 gap-1">
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              </div>
+                      <!-- Rating -->
+                      <div class="flex text-primary mb-4 gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      </div>
 
-              <!-- Testimonial Content -->
-              <p class="text-xl md:text-2xl font-medium text-on-surface leading-relaxed max-w-[600px] mb-2 italic">
-                "ما شاء الله عليك يا كبتن كلام علمي و نصايح تحسها طالعة من واحد صاحب بجد اللهم بارك"
-              </p>
+                      <!-- Testimonial Content -->
+                      <p class="text-base md:text-lg font-medium text-on-surface leading-relaxed mb-2 italic">
+                        "ما شاء الله عليك يا كبتن كلام علمي و نصايح تحسها طالعة من واحد صاحب بجد اللهم بارك"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="flex-shrink-0 w-full md:w-[70%] max-w-[650px] px-4 transition-all duration-700 ease-out select-none cursor-pointer testimonial-slide" data-index="1">
+                  <div dir="rtl" class="testimonial-card bg-surface-container rounded-3xl p-6 md:p-10 border border-outline-variant/20 hover:border-primary/30 transition-all duration-500 relative overflow-hidden group shadow-2xl flex flex-col h-full">
+                    <!-- Top decorative quote icon -->
+                    <i data-lucide="quote" class="text-primary/10 w-20 h-20 absolute left-6 top-6 pointer-events-none"></i>
+                    
+                    <div class="flex flex-col items-center text-center relative z-10 h-full">
+                      <!-- Avatar -->
+                      <div class="w-20 h-20 rounded-full border-2 border-primary/30 p-1 mb-4 flex items-center justify-center bg-background/50 shadow-inner">
+                        <svg class="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="50" cy="50" r="46" fill="#132a24" stroke="#22c55e" stroke-width="2" stroke-opacity="0.3"/>
+                          <path d="M25 82C25 72 32 64 50 64C68 64 75 72 75 82" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+                          <circle cx="50" cy="42" r="16" stroke="#22c55e" stroke-width="4" fill="#132a24"/>
+                          <path d="M34 42C34 33 42 30 50 30C58 30 66 33 66 42" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+
+                      <!-- Rating -->
+                      <div class="flex text-primary mb-4 gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      </div>
+
+                      <!-- Testimonial Content -->
+                      <p class="text-base md:text-lg font-medium text-on-surface leading-relaxed mb-2 italic">
+                        "بص هوا رايي في الخدمه اكيد واضح كدا تقريبا كدا في 3 كل ما اقعد مع حد فيهم اكلمهم ع مستوي الخدمه واد ايه انت فارق معايا في كل حاجه حرفيا وهما بالفعل اتكلمو معاك بالفعل وان شاء الله هيحقو نتائج. يكفي بس اني بخس منغير ما احس اني محروم من الاكل 🤌🏻😅 دي في حد ذاتها كانت اكتر حاجه بتضايقني في دايت عموما اني ابقا محروم من الاكل الي بحبو بشكل عام تقريبا انا دلوقتي باكل وبستمتع وبخس بردو 😉💪🏻🔥"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="flex-shrink-0 w-full md:w-[70%] max-w-[650px] px-4 transition-all duration-700 ease-out select-none cursor-pointer testimonial-slide" data-index="2">
+                  <div dir="rtl" class="testimonial-card bg-surface-container rounded-3xl p-6 md:p-10 border border-outline-variant/20 hover:border-primary/30 transition-all duration-500 relative overflow-hidden group shadow-2xl flex flex-col h-full">
+                    <!-- Top decorative quote icon -->
+                    <i data-lucide="quote" class="text-primary/10 w-20 h-20 absolute left-6 top-6 pointer-events-none"></i>
+                    
+                    <div class="flex flex-col items-center text-center relative z-10 h-full">
+                      <!-- Avatar -->
+                      <div class="w-20 h-20 rounded-full border-2 border-primary/30 p-1 mb-4 flex items-center justify-center bg-background/50 shadow-inner">
+                        <svg class="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="50" cy="50" r="46" fill="#132a24" stroke="#22c55e" stroke-width="2" stroke-opacity="0.3"/>
+                          <path d="M25 82C25 72 32 64 50 64C68 64 75 72 75 82" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+                          <circle cx="50" cy="42" r="16" stroke="#22c55e" stroke-width="4" fill="#132a24"/>
+                          <path d="M34 42C34 33 42 30 50 30C58 30 66 33 66 42" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+
+                      <!-- Rating -->
+                      <div class="flex text-primary mb-4 gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      </div>
+
+                      <!-- Testimonial Content -->
+                      <p class="text-base md:text-lg font-medium text-on-surface leading-relaxed mb-2 italic">
+                        "والله مش عارف اقولك ايه يا اخي وكابتني والله انا اول مره حد يهتم بيا كده 🤍😂🥺 يجدع دا الحج والحجة ماحستش بالاهتمام ده .....والله جزاك الله خيرا يا اخي 🤍😂"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="flex-shrink-0 w-full md:w-[70%] max-w-[650px] px-4 transition-all duration-700 ease-out select-none cursor-pointer testimonial-slide" data-index="3">
+                  <div dir="rtl" class="testimonial-card bg-surface-container rounded-3xl p-6 md:p-10 border border-outline-variant/20 hover:border-primary/30 transition-all duration-500 relative overflow-hidden group shadow-2xl flex flex-col h-full">
+                    <!-- Top decorative quote icon -->
+                    <i data-lucide="quote" class="text-primary/10 w-20 h-20 absolute left-6 top-6 pointer-events-none"></i>
+                    
+                    <div class="flex flex-col items-center text-center relative z-10 h-full">
+                      <!-- Avatar -->
+                      <div class="w-20 h-20 rounded-full border-2 border-primary/30 p-1 mb-4 flex items-center justify-center bg-background/50 shadow-inner">
+                        <svg class="w-full h-full text-primary" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="50" cy="50" r="46" fill="#132a24" stroke="#22c55e" stroke-width="2" stroke-opacity="0.3"/>
+                          <path d="M25 82C25 72 32 64 50 64C68 64 75 72 75 82" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+                          <circle cx="50" cy="42" r="16" stroke="#22c55e" stroke-width="4" fill="#132a24"/>
+                          <path d="M34 42C34 33 42 30 50 30C58 30 66 33 66 42" stroke="#86efac" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+
+                      <!-- Rating -->
+                      <div class="flex text-primary mb-4 gap-1">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                      </div>
+
+                      <!-- Testimonial Content -->
+                      <p class="text-base md:text-lg font-medium text-on-surface leading-relaxed mb-2 italic">
+                        "طبعا الكلام الي قولتو دا ع مستوي الدايت عشان دي حاجه كانت بتتعبني نفسيا وانا بعمل دايت. ع مستوي التمرين بقا لا في فرق كبير وواضح الوقايه من الاصابه دي مش اي حد بيفهم فيها ودي عندك كويسه اوي بصراحه. ع مستوي الشخصي مشكله كتفي انت بصراحه شغال عليها معايا اوي وبصراحه بقيت مرتاح وانا بلعب لدرجه اني بدخل اعمل الي بتقول عليه بكل ثقه وانا مش خايف خالص من اي تاثير ممكن يحصل وكمان وفي حاجه مهمه اوي ان في مرونه كبيره في التعامل وكمان انك موجود بشكل مباشر وواضح في كل الاوقات بصراحه مفكرش ان في مره فكرت اكلمك الا وكنت موجود وبتسمعني وبتحل معايا وبنوصل لحل يساعدني اني اكون احسن واتشجع اكتر. واخيرا بقا بشكرك بجد ع مجهودك معايا 🔥❤️💪🏻"
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
+
+            <!-- Controls (Nav Arrows in RTL arrangement visually but container is LTR) -->
+            <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 md:px-12 z-20 pointer-events-none">
+              <!-- Right Arrow (Prev in LTR perspective / Next in RTL) -->
+              <button id="next-testimonial" class="pointer-events-auto w-12 h-12 rounded-full bg-surface-container/90 border border-primary/20 hover:border-primary/60 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all cursor-pointer shadow-2xl">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+              </button>
+              <!-- Left Arrow (Next in LTR perspective / Prev in RTL) -->
+              <button id="prev-testimonial" class="pointer-events-auto w-12 h-12 rounded-full bg-surface-container/90 border border-primary/20 hover:border-primary/60 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all cursor-pointer shadow-2xl">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+              </button>
+            </div>
+
+            <!-- Dots Indicators -->
+            <div class="flex justify-center gap-3 mt-8 z-20 relative" id="testimonial-dots"></div>
+
           </div>
         </section>
 

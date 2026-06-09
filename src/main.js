@@ -1,6 +1,7 @@
 import './index.css';
 import { CONFIG } from './config.js';
 import { HEADER_HTML, MOBILE_MENU_HTML, FOOTER_HTML, WHATSAPP_BTN_HTML } from './components/navigation.js';
+import { initTestimonialCarousel } from './testimonials.js';
 
 // Dynamically render the shared components (Header, Footer, Mobile Menu, WhatsApp button)
 function renderSharedComponents() {
@@ -120,6 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.lucide) {
     window.lucide.createIcons();
   }
+
+  // Initialize testimonial carousel slider
+  initTestimonialCarousel();
 
   // Reveal Animations on Scroll
   const observerOptions = {
