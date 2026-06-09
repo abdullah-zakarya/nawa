@@ -150,38 +150,51 @@
 /* Custom Testimonial Carousel Styles */
 #testimonial-carousel {
   user-select: none;
+  position: relative;
+}
+
+#testimonial-viewport {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  height: 520px; /* Default height, dynamically adjusted in JS */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height 0.5s ease;
 }
 
 #testimonial-track {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  left: 0;
+  top: 0;
 }
 
 .testimonial-slide {
-  transform: scale(0.85);
-  opacity: 0.25;
-  filter: blur(4px);
-  position: relative;
-  z-index: 10;
-  margin-left: -20px;
-  margin-right: -20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 92%;
+  max-width: 650px;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  
+  opacity: 0;
+  filter: blur(5px);
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
               opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
               filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
               z-index 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (min-width: 768px) {
-  .testimonial-slide {
-    transform: scale(0.88);
-    opacity: 0.35;
-    filter: blur(3px);
-    margin-left: -70px;
-    margin-right: -70px;
-  }
-}
-
 .testimonial-slide.active-slide {
-  transform: scale(1.05) !important;
   opacity: 1 !important;
   filter: blur(0) !important;
   z-index: 20 !important;
@@ -189,7 +202,7 @@
 
 .testimonial-slide.active-slide .testimonial-card {
   border-color: rgba(34, 197, 94, 0.4);
-  box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.15), 0 0 20px rgba(34, 197, 94, 0.1);
+  box-shadow: 0 20px 40px -10px rgba(34, 197, 94, 0.15), 0 0 25px rgba(34, 197, 94, 0.15);
 }
 
 .carousel-dot {
