@@ -32,167 +32,243 @@
           </div>
         </section>
 
+        <!-- Pricing Duration Toggle -->
+        <div class="flex justify-center mb-12 reveal">
+          <div class="bg-surface-container/50 backdrop-blur-md p-1.5 rounded-2xl border border-outline-variant/30 flex gap-2">
+            <button id="toggle-12" class="px-6 py-2.5 rounded-xl text-sm font-black transition-all bg-primary text-background shadow-lg shadow-primary/20 cursor-pointer">
+              ١٢ أسبوعًا
+            </button>
+            <button id="toggle-24" class="px-6 py-2.5 rounded-xl text-sm font-black transition-all text-on-surface/60 hover:text-on-surface cursor-pointer">
+              ٢٤ أسبوعًا
+            </button>
+          </div>
+        </div>
+
         <!-- Comparison Grid -->
         <section class="px-6 pb-20">
           <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch relative">
-            <!-- 3 Months Plan -->
-            <div class="glass-panel rounded-2xl p-8 border border-outline-variant flex flex-col h-full hover:bg-surface-container/50 transition-colors duration-300 reveal">
+            <!-- 🌱 باقة غرس -->
+            <div class="plan-card glass-panel rounded-2xl p-8 border border-outline-variant flex flex-col h-full hover:bg-surface-container/50 transition-colors duration-300 reveal"
+                 data-price-12="٥٠٠"
+                 data-price-24="٩٠٠"
+                 data-duration-text-12="/ ١٢ أسبوعًا"
+                 data-duration-text-24="/ ٢٤ أسبوعًا"
+                 data-text-12="مرحباً كوتش يوسف، أود الاشتراك في باقة غرس 🌱 لمدة 12 أسبوعاً بسعر 500 جنيه مصري. كيف نبدأ؟"
+                 data-text-24="مرحباً كوتش يوسف، أود الاشتراك في باقة غرس 🌱 لمدة 24 أسبوعاً بسعر 900 جنيه مصري. كيف نبدأ؟">
               <div class="mb-6">
-                <h3 class="text-2xl font-bold text-on-surface mb-2">٣ أشهر</h3>
-                <p class="text-sm text-on-surface-variant">الالتزام الأساسي</p>
+                <h3 class="text-2xl font-black text-on-surface mb-2 flex items-center gap-2">
+                  <span>باقة غرس</span>
+                  <span class="text-primary text-xl">🌱</span>
+                </h3>
+                <p class="text-xs text-on-surface-variant leading-relaxed">البداية الصحيحة لكل رحلة ناجحة. مناسبة لمن يريد خطة شخصية واضحة يستطيع الالتزام بها بشكل مستقل.</p>
               </div>
               <div class="mb-8 flex flex-col gap-1">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-bold border border-primary/30">عروض الصيف 50%</span>
-                </div>
                 <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-extrabold text-primary">٧٥٠ £</span>
-                  <span class="text-xl text-on-surface-variant line-through">١,٥٠٠ £</span>
-                  <span class="text-xs text-on-surface-variant">/ إجمالي الاشتراك</span>
+                  <span class="price-val text-4xl font-extrabold text-primary">٥٠٠</span>
+                  <span class="text-xl text-primary font-black">ج.م</span>
+                  <span class="duration-text text-xs text-on-surface-variant">/ ١٢ أسبوعًا</span>
                 </div>
               </div>
               <div class="flex-grow">
                 <ul class="space-y-4 mb-8 text-on-surface text-sm">
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>خطة تدريب مخصصة بالكامل</span>
+                    <span>برنامج تدريبي مخصص بالكامل.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>نظام غذائي متكامل ومحسوب السعرات</span>
+                    <span>نظام غذائي مخصص حسب أهدافك وااحتياجاتك.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>متابعة نصف شهرية وتعديل القياسات</span>
+                    <span>توصيات بالمكملات الغذائية عند الحاجة.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
+                    <span>توصيات لتحسين العادات اليومية ونمط الحياة.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
+                    <span>مراجعة شهرية للتقدم عبر البريد الإلكتروني.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
+                    <span>تحديث واحد شهريًا للخطة التدريبية والغذائية.</span>
                   </li>
                 </ul>
               </div>
-              <a href="https://wa.me/201019912699?text=مرحباً كوتش يوسف، أود الاشتراك في باقة الـ 3 أشهر (الالتزام الأساسي) ضمن عروض الصيف بسعر 750 £. كيف نبدأ؟" class="w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm">
-                اختر الخطة
+              <a href="#" class="checkout-btn w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm block">
+                اختر الباقة
               </a>
             </div>
 
-            <!-- 6 Months Plan (Best Value) -->
-            <div class="bg-surface-container rounded-2xl p-8 border-2 border-primary glow-border flex flex-col h-full relative z-10 transform md:-translate-y-4 reveal-scale">
+            <!-- 🌿 باقة ازدهار -->
+            <div class="plan-card bg-surface-container rounded-2xl p-8 border-2 border-primary glow-border flex flex-col h-full relative z-10 transform md:-translate-y-4 reveal-scale"
+                 data-price-12="١,٥٠٠"
+                 data-price-24="٢,٥٠٠"
+                 data-duration-text-12="/ ١٢ أسبوعًا"
+                 data-duration-text-24="/ ٢٤ أسبوعًا"
+                 data-text-12="مرحباً كوتش يوسف، أود الاشتراك في باقة ازدهار 🌿 لمدة 12 أسبوعاً بسعر 1500 جنيه مصري. كيف نبدأ؟"
+                 data-text-24="مرحباً كوتش يوسف، أود الاشتراك في باقة ازدهار 🌿 لمدة 24 أسبوعاً بسعر 2500 جنيه مصري. كيف نبدأ؟">
               <div class="absolute -top-4 right-1/2 translate-x-1/2 bg-primary text-background px-4 py-1.5 rounded-full text-xs font-black whitespace-nowrap shadow-lg shadow-primary/20">
-                الأكثر قيمة
+                الأكثر طلباً 🌿
               </div>
               <div class="mb-6 mt-4">
-                <h3 class="text-2xl font-bold text-primary mb-2">٦ أشهر</h3>
-                <p class="text-sm text-on-surface-variant">التحول الجذري</p>
+                <h3 class="text-2xl font-black text-primary mb-2 flex items-center gap-2">
+                  <span>باقة ازدهار</span>
+                </h3>
+                <p class="text-xs text-on-surface-variant leading-relaxed">متابعة مستمرة، توجيه، ومحاسبة تساعدك على تحقيق أفضل النتائج.</p>
               </div>
               <div class="mb-8 flex flex-col gap-1">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="bg-primary text-background px-2 py-1 rounded text-xs font-bold shadow-sm">عروض الصيف 50%</span>
-                </div>
                 <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-extrabold text-primary">١,٢٥٠ £</span>
-                  <span class="text-xl text-on-surface-variant line-through">٢,٥٠٠ £</span>
-                  <span class="text-xs text-on-surface-variant">/ إجمالي الاشتراك</span>
+                  <span class="price-val text-4xl font-extrabold text-primary">١,٥٠٠</span>
+                  <span class="text-xl text-primary font-black">ج.م</span>
+                  <span class="duration-text text-xs text-on-surface-variant">/ ١٢ أسبوعًا</span>
                 </div>
               </div>
               <div class="flex-grow">
+                <p class="text-xs font-bold text-primary mb-4">تشمل كل ما في باقة غرس بالإضافة إلى:</p>
                 <ul class="space-y-4 mb-8 text-on-surface text-sm">
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>خطة تدريب وتغذية متقدمة</span>
+                    <span>التواصل المباشر عبر WhatsApp.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>متابعة أسبوعية دقيقة وتعديلات مستمرة</span>
+                    <span>الرد على الاستفسارات خلال 24 إلى 48 ساعة.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>تعديلات غير محدودة للبرنامج حسب التطور</span>
+                    <span>تقييم شهري دقيق للتقدم.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>دعم متواصل ومباشر على الواتساب</span>
+                    <span>تحديث شهري للخطة التدريبية والغذائية.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
+                    <span>متابعة مستمرة والإجابة عن الأسئلة المتعلقة بالتدريب والتغذية ونمط الحياة.</span>
                   </li>
                 </ul>
               </div>
-              <a href="https://wa.me/201019912699?text=مرحباً كوتش يوسف، أود الاشتراك في باقة الـ 6 أشهر (التحول الجذري) ضمن عروض الصيف بسعر 1250 £. كيف نبدأ؟" class="w-full py-4 rounded-xl bg-primary text-background hover:bg-secondary transition-colors text-center font-black text-sm shadow-lg shadow-primary/20">
+              <a href="#" class="checkout-btn w-full py-4 rounded-xl bg-primary text-background hover:bg-secondary transition-colors text-center font-black text-sm shadow-lg shadow-primary/20 block">
                 انضم الآن
               </a>
             </div>
 
-            <!-- 12 Months Plan -->
-            <div class="glass-panel rounded-2xl p-8 border border-outline-variant flex flex-col h-full hover:bg-surface-container/50 transition-colors duration-300 reveal">
+            <!-- 🌳 باقة حصاد -->
+            <div class="plan-card glass-panel rounded-2xl p-8 border border-outline-variant flex flex-col h-full hover:bg-surface-container/50 transition-colors duration-300 reveal"
+                 data-price-12="٢,٠٠٠"
+                 data-price-24="٣,٥٠٠"
+                 data-duration-text-12="/ ١٢ أسبوعًا"
+                 data-duration-text-24="/ ٢٤ أسبوعًا"
+                 data-text-12="مرحباً كوتش يوسف، أود الاشتراك في باقة حصاد 🌳 لمدة 12 أسبوعاً بسعر 2000 جنيه مصري. كيف نبدأ؟"
+                 data-text-24="مرحباً كوتش يوسف، أود الاشتراك في باقة حصاد 🌳 لمدة 24 أسبوعاً بسعر 3500 جنيه مصري. كيف نبدأ؟">
               <div class="mb-6">
-                <h3 class="text-2xl font-bold text-on-surface mb-2">١٢ شهر</h3>
-                <p class="text-sm text-on-surface-variant">أسلوب حياة مستدام</p>
+                <h3 class="text-2xl font-black text-on-surface mb-2 flex items-center gap-2">
+                  <span>باقة حصاد</span>
+                  <span class="text-primary text-xl">🌳</span>
+                </h3>
+                <p class="text-xs text-on-surface-variant leading-relaxed">أعلى مستوى من المتابعة الشخصية والدعم لتحقيق أفضل النتائج الجسدية والرياضية.</p>
               </div>
               <div class="mb-8 flex flex-col gap-1">
-                <div class="flex items-center gap-2 mb-2">
-                  <span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-bold border border-primary/30">عروض الصيف 50%</span>
-                </div>
                 <div class="flex items-baseline gap-2">
-                  <span class="text-4xl font-extrabold text-primary">٢,٠٠٠ £</span>
-                  <span class="text-xl text-on-surface-variant line-through">٤,٠٠٠ £</span>
-                  <span class="text-xs text-on-surface-variant">/ إجمالي الاشتراك</span>
+                  <span class="price-val text-4xl font-extrabold text-primary">٢,٠٠٠</span>
+                  <span class="text-xl text-primary font-black">ج.م</span>
+                  <span class="duration-text text-xs text-on-surface-variant">/ ١٢ أسبوعًا</span>
                 </div>
               </div>
               <div class="flex-grow">
+                <p class="text-xs font-bold text-primary mb-4">تشمل كل ما في باقة ازدهار بالإضافة إلى:</p>
                 <ul class="space-y-4 mb-8 text-on-surface text-sm">
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>جميع ميزات خطة ٦ أشهر المتقدمة</span>
+                    <span>أولوية قصوى في الرد على الرسائل.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>تقييم شامل وفحص للقياسات كل ٣ أشهر</span>
+                    <span>الرد السريع خلال 12 إلى 24 ساعة فقط.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>مكالمة استشارية شهرية مع المدرب 1v1</span>
+                    <span>أولوية تعديل الخطط التدريبية والغذائية فور الحاجة.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>أولوية قصوى في الدعم والاستجابة السريعة</span>
+                    <span>تعديلات غير محدودة على النظام الغذائي والبرنامج التدريبي طوال فترة الاشتراك.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
+                    <span>جلسة متابعة خاصة كل أسبوعين (حتى 60 دقيقة) لمراجعة التقدم، ومناقشة التحديات، وتطوير الخطة بما يناسب أهدافك.</span>
                   </li>
                 </ul>
               </div>
-              <a href="https://wa.me/201019912699?text=مرحباً كوتش يوسف، أود الاشتراك في باقة الـ 12 شهراً (أسلوب حياة مستدام) ضمن عروض الصيف بسعر 2000 £. كيف نبدأ؟" class="w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm">
-                اختر الخطة
+              <a href="#" class="checkout-btn w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm block">
+                اختر الباقة
               </a>
             </div>
           </div>
         </section>
 
-        <!-- What's Included Section -->
-        <section class="py-20 bg-surface-container/50 border-y border-primary/5 px-6">
-          <div class="max-w-[1200px] mx-auto relative z-10">
-            <h2 class="text-3xl font-black text-primary text-center mb-16 reveal">ماذا تشمل خطتك؟</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <!-- Nutrition -->
-              <div class="flex flex-col items-center text-center group reveal">
-                <div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center mb-6 group-hover:border-primary border border-outline-variant/30 transition-all duration-300">
-                  <i data-lucide="utensils" class="text-primary w-8 h-8"></i>
+        <!-- سياسة المتابعة (Follow-up Policy) -->
+        <section class="max-w-[1200px] mx-auto px-6 pb-20 reveal">
+          <div class="bg-surface-container/30 backdrop-blur-md rounded-3xl p-8 lg:p-12 border border-primary/10 shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-24 -left-24 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="flex flex-col lg:flex-row gap-10 items-start">
+              <div class="lg:w-1/3">
+                <div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs font-bold border border-primary/20 mb-4">
+                  <i data-lucide="info" class="w-4 h-4"></i>
+                  <span>منهجية التدريب</span>
                 </div>
-                <h3 class="text-xl font-bold text-on-surface mb-3">تغذية محسوبة</h3>
-                <p class="text-sm text-on-surface-variant leading-relaxed">
-                  برامج غذائية مرنة ومحسوبة الماكروز تتناسب مع نمط حياتك والأطعمة التي تفضلها، لضمان استمرارية النتائج.
+                <h2 class="text-3xl font-black text-on-surface">سياسة المتابعة والالتزام</h2>
+                <p class="text-on-surface-variant text-sm mt-4 leading-relaxed">
+                  نحن نؤمن بالتخصيص الكامل والشفافية لبناء تجربة تدريبية تحقق لك أفضل النتائج وتضمن لك أسلوب حياة صحي ومستدام.
                 </p>
               </div>
-              <!-- Training -->
-              <div class="flex flex-col items-center text-center group reveal-scale">
-                <div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center mb-6 group-hover:border-primary border border-outline-variant/30 transition-all duration-300">
-                  <i data-lucide="dumbbell" class="text-primary w-8 h-8"></i>
+              
+              <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                <!-- policy item 1 -->
+                <div class="bg-background/40 p-6 rounded-2xl border border-outline-variant/10">
+                  <h4 class="text-lg font-bold text-primary mb-2 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    تصميم مخصص بالكامل
+                  </h4>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    جميع البرامج يتم تصميمها خصيصًا لكل متدرب، ولا توجد خطط جاهزة أو منسوخة.
+                  </p>
                 </div>
-                <h3 class="text-xl font-bold text-on-surface mb-3">تدريب ذكي</h3>
-                <p class="text-sm text-on-surface-variant leading-relaxed">
-                  جداول تمارين مفصلة ومدعمة بفيديوهات توضيحية، مصممة لبناء العضلات وحرق الدهون بكفاءة عالية.
-                </p>
-              </div>
-              <!-- Support -->
-              <div class="flex flex-col items-center text-center group reveal">
-                <div class="w-16 h-16 rounded-2xl bg-surface-container flex items-center justify-center mb-6 group-hover:border-primary border border-outline-variant/30 transition-all duration-300">
-                  <i data-lucide="message-circle" class="text-primary w-8 h-8"></i>
+                <!-- policy item 2 -->
+                <div class="bg-background/40 p-6 rounded-2xl border border-outline-variant/10">
+                  <h4 class="text-lg font-bold text-primary mb-2 flex items-center gap-2">
+                    <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                    تعديل مستمر مرن
+                  </h4>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    يتم تعديل الخطط بناءً على تقدم المتدرب واحتياجاته الفعلية المستجدة خلال الاشتراك.
+                  </p>
                 </div>
-                <h3 class="text-xl font-bold text-on-surface mb-3">دعم مستمر</h3>
-                <p class="text-sm text-on-surface-variant leading-relaxed">
-                  لست وحدك في هذه الرحلة. نوفر لك دعماً يومياً ومتابعة دقيقة لضمان بقائك على المسار الصحيح وتخطي أي عقبات.
-                </p>
+                <!-- policy item 3 -->
+                <div class="bg-background/40 p-6 rounded-2xl border border-outline-variant/10">
+                  <h4 class="text-lg font-bold text-primary mb-2 flex items-center gap-2">
+                    <i data-lucide="sliders" class="w-5 h-5"></i>
+                    مراعاة الظروف الشخصية
+                  </h4>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    يتم مراعاة الهدف، ومستوى اللياقة، والميزانية، والوقت المتاح، والأدوات المتوفرة عند تصميم البرنامج.
+                  </p>
+                </div>
+                <!-- policy item 4 -->
+                <div class="bg-background/40 p-6 rounded-2xl border border-outline-variant/10">
+                  <h4 class="text-lg font-bold text-primary mb-2 flex items-center gap-2">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                    مسؤولية مشتركة للنتائج
+                  </h4>
+                  <p class="text-on-surface-variant text-sm leading-relaxed">
+                    الهدف هو مساعدتك على بناء أسلوب حياة صحي ومستدام، مع العلم أن النتائج تعتمد على مدى التزامك بالخطة.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -207,7 +283,7 @@
               سياسة الاسترجاع والضمان المالي
             </h3>
             <p class="text-on-surface-variant leading-relaxed text-sm mb-4">
-              نحن في نوا نثق تماماً في جودة وفاعلية برامجنا التدريبية والغذائية. لذلك، نقدم ضماناً كاملاً لاسترجاع الأموال:
+              نحن في نواة نثق تماماً في جودة وفاعلية برامجنا التدريبية والغذائية. لذلك، نقدم ضماناً كاملاً لاسترجاع الأموال:
             </p>
             <ul class="space-y-3 text-sm text-on-surface-variant">
               <li class="flex items-start gap-2">
@@ -251,5 +327,6 @@
       <footer class="bg-background border-t border-primary/10 pt-20 pb-10 px-6"></footer>
     </div>
     <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/plans.js"></script>
   </body>
 </html>
