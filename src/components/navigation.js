@@ -3,8 +3,8 @@ import { CONFIG } from '../config.js';
 export const HEADER_HTML = `
   <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     <div class="flex items-center gap-4">
-      <div class="rounded-xl overflow-hidden w-10 h-10 border border-white/10 bg-white flex items-center justify-center p-0.5 shadow-sm">
-        <img src="/logo.jpeg" alt="NAWA Logo" class="w-full h-full object-contain rounded-lg" />
+      <div class="rounded-xl overflow-hidden w-10 h-10 border border-white/10 bg-[#f7f6f2] flex items-center justify-center shadow-sm relative">
+        <img src="/logo.jpeg" alt="NAWA Logo" class="w-full h-full object-cover scale-[1.7]" />
       </div>
       <span class="text-2xl font-black tracking-tighter text-on-surface">NAWA <span class="text-primary">نواة</span></span>
     </div>
@@ -110,8 +110,8 @@ export const FOOTER_HTML = `
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 text-center md:text-right">
     <div class="space-y-4">
       <div class="flex items-center justify-center md:justify-start gap-4">
-        <div class="rounded-xl overflow-hidden w-12 h-12 border border-white/10 bg-white flex items-center justify-center p-0.5 shadow-md">
-          <img src="/logo.jpeg" alt="NAWA Logo" class="w-full h-full object-contain rounded-lg" />
+        <div class="rounded-xl overflow-hidden w-12 h-12 border border-white/10 bg-[#f7f6f2] flex items-center justify-center shadow-md relative">
+          <img src="/logo.jpeg" alt="NAWA Logo" class="w-full h-full object-cover scale-[1.7]" />
         </div>
         <span class="text-3xl font-black tracking-tighter">NAWA ELITE</span>
       </div>
