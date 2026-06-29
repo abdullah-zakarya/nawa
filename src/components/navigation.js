@@ -8,12 +8,11 @@ export const HEADER_HTML = `
       </div>
       <span class="text-2xl font-black tracking-tighter text-on-surface">NAWA <span class="text-primary">نواة</span></span>
     </div>
-    
-    <div class="hidden md:flex items-center gap-10">
-      <a href="/index.html" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">الرئيسية</a>
+     <div class="hidden md:flex items-center gap-10">
+      <a href="/index.html#hero" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">الرئيسية</a>
       <a href="/about.html" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">عن الكوتش</a>
-      <a href="/plans.html" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">الباقات والاشتراكات</a>
-      <a href="/success-stories.html" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">قصص النجاح</a>
+      <a href="/index.html#plans" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">الباقات والاشتراكات</a>
+      <a href="/index.html#success-stories" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">قصص النجاح</a>
       <a href="/calculator.html" class="nav-link text-on-surface/60 hover:text-primary font-medium transition-colors">حاسبة اللياقة</a>
     </div>
 
@@ -49,7 +48,7 @@ export const MOBILE_MENU_HTML = `
       </div>
       
       <nav class="flex flex-col p-4 gap-2">
-        <a href="/index.html" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-primary/10 group">
+        <a href="/index.html#hero" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-primary/10 group">
           <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-primary group-hover:text-background transition-all">
             <i data-lucide="home" class="w-5 h-5"></i>
           </div>
@@ -63,14 +62,14 @@ export const MOBILE_MENU_HTML = `
           <span class="text-lg font-bold text-on-surface/60 group-hover:text-primary transition-colors">عن الكوتش</span>
         </a>
         
-        <a href="/plans.html" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-primary/10 group">
+        <a href="/index.html#plans" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-primary/10 group">
           <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-primary group-hover:text-background transition-all">
             <i data-lucide="layout-grid" class="w-5 h-5"></i>
           </div>
           <span class="text-lg font-bold text-on-surface/60 group-hover:text-primary transition-colors">الباقات والاشتراكات</span>
         </a>
         
-        <a href="/success-stories.html" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-primary/10 group">
+        <a href="/index.html#success-stories" class="mobile-nav-link flex items-center gap-4 p-4 rounded-2xl transition-all hover:bg-primary/10 group">
           <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-on-surface/40 group-hover:bg-primary group-hover:text-background transition-all">
             <i data-lucide="trophy" class="w-5 h-5"></i>
           </div>
@@ -84,7 +83,7 @@ export const MOBILE_MENU_HTML = `
           <span class="text-lg font-bold text-on-surface/60 group-hover:text-primary transition-colors">حاسبة اللياقة</span>
         </a>
       </nav>
-
+ 
       <div class="mt-auto p-6 border-t border-white/5 bg-surface-container/30">
         <div class="flex items-center gap-4 mb-6">
           <div class="relative">
@@ -98,7 +97,7 @@ export const MOBILE_MENU_HTML = `
             <p class="text-sm font-bold text-on-surface">يوسف محمد</p>
           </div>
         </div>
-        <a href="https://wa.me/${CONFIG.whatsappNumber}" class="flex items-center justify-center gap-3 w-full py-4 bg-primary text-background font-black rounded-xl text-center shadow-lg shadow-primary/20 hover:bg-secondary transition-all active:scale-95">
+        <a href="https://wa.me/\${CONFIG.whatsappNumber}" class="flex items-center justify-center gap-3 w-full py-4 bg-primary text-background font-black rounded-xl text-center shadow-lg shadow-primary/20 hover:bg-secondary transition-all active:scale-95">
           <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
           ابدأ رحلتك الآن
         </a>
@@ -120,10 +119,10 @@ export const FOOTER_HTML = `
     </div>
 
     <div class="flex flex-wrap justify-center gap-8 text-sm font-bold tracking-wide text-on-surface/60">
-      <a href="/index.html" class="hover:text-primary transition-colors">الرئيسية</a>
+      <a href="/index.html#hero" class="hover:text-primary transition-colors">الرئيسية</a>
       <a href="/about.html" class="hover:text-primary transition-colors">عن الكوتش</a>
-      <a href="/plans.html" class="hover:text-primary transition-colors">الباقات والاشتراكات</a>
-      <a href="/success-stories.html" class="hover:text-primary transition-colors">قصص النجاح</a>
+      <a href="/index.html#plans" class="hover:text-primary transition-colors">الباقات والاشتراكات</a>
+      <a href="/index.html#success-stories" class="hover:text-primary transition-colors">قصص النجاح</a>
       <a href="/calculator.html" class="hover:text-primary transition-colors">حاسبة اللياقة</a>
     </div>
   </div>
