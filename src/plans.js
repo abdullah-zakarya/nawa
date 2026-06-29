@@ -24,10 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update each card's price, duration text, and WhatsApp checkout link
     cards.forEach(card => {
       const priceVal = card.querySelector('.price-val');
+      const priceOriginal = card.querySelector('.price-original');
       const durationText = card.querySelector('.duration-text');
       const checkoutBtn = card.querySelector('.checkout-btn');
 
       const price = card.getAttribute(`data-price-${duration}`);
+      const originalPrice = card.getAttribute(`data-original-${duration}`);
       const durText = card.getAttribute(`data-duration-text-${duration}`);
       const rawText = card.getAttribute(`data-text-${duration}`);
 
@@ -37,6 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           priceVal.textContent = price;
           priceVal.style.opacity = '1';
+        }, 150);
+      }
+
+      if (priceOriginal) {
+        priceOriginal.style.transition = 'opacity 0.15s ease';
+        priceOriginal.style.opacity = '0';
+        setTimeout(() => {
+          priceOriginal.textContent = originalPrice;
+          priceOriginal.style.opacity = '1';
         }, 150);
       }
 
