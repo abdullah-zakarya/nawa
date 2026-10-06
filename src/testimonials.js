@@ -42,7 +42,9 @@ export function initTestimonialCarousel() {
   const numDots = 4;
   dotsContainer.innerHTML = '';
   for (let i = 0; i < numDots; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `الرأي ${i + 1}`);
     dot.classList.add('carousel-dot');
     if (i === 0) dot.classList.add('active-dot');
     dot.addEventListener('click', () => {
@@ -229,19 +231,30 @@ export function initTestimonialCarousel() {
 
   // Auto-play interval
   let autoSlideInterval;
+  let isDragging = false;
   const slideDelay = 5000;
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function startAutoSlide() {
+    clearInterval(autoSlideInterval);
+    if (prefersReducedMotion) return;
     autoSlideInterval = setInterval(nextSlide, slideDelay);
   }
 
+  // Pause while the visitor is reading (hover on desktop)
+  carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+  carousel.addEventListener('mouseleave', () => {
+    if (!isDragging) startAutoSlide();
+  });
+
   function resetAutoSlide() {
-    clearInterval(autoSlideInterval);
+    // While hovering, keep autoplay paused
+    if (carousel.matches(':hover')) return;
     startAutoSlide();
   }
 
   // Drag and Swipe support (Touch & Desktop Mouse)
-  let isDragging = false;
   let startX = 0;
   let dragAngleDiff = 0;
   let baseTrackAngle = 0;
@@ -292,7 +305,7 @@ export function initTestimonialCarousel() {
     }
     
     dragAngleDiff = 0;
-    startAutoSlide();
+    resetAutoSlide();
   }
 
   function getPositionX(e) {

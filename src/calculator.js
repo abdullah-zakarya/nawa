@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const genderInputs = document.querySelectorAll('input[name="gender"]');
   const hipInputGroup = document.getElementById('hipInputGroup');
   const resultsCard = document.getElementById('resultsCard');
+  const resultsPlaceholder = document.getElementById('resultsPlaceholder');
+  const calcBtn = document.getElementById('calc-btn');
   const bfResult = document.getElementById('bfResult');
   const bfText = document.getElementById('bfText');
   const targetCaloriesEl = document.getElementById('targetCalories');
@@ -37,8 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Native validation (required/min/max) runs before submit fires; Enter also submits
+  calculatorForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    calculateResults();
+  });
+
   // Calculate body fat percent and other health metrics
-  window.calculateResults = function() {
+  function calculateResults() {
     // Basic inputs
     const gender = document.querySelector('input[name="gender"]:checked').value;
     const age = parseInt(document.getElementById('age').value);
@@ -52,10 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const waist = parseFloat(document.getElementById('waist').value) || 0;
     const hip = parseFloat(document.getElementById('hip').value) || 0;
 
-    if (!age || !weight || !height) {
-      alert('رجاءً املأ جميع الحقول الأساسية: العمر، الوزن، والطول.');
-      return;
-    }
+    if (!age || !weight || !height) return;
 
     // 1. Calculate BMR (Mifflin-St Jeor)
     let bmr = 0;
@@ -102,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Visual feedback button loader
-    const btn = document.querySelector('button[onclick="calculateResults()"]');
+    const btn = calcBtn;
     const originalText = btn.innerHTML;
     btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> جاري الحساب...';
     btn.disabled = true;
@@ -115,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Show results card
       resultsCard.classList.remove('hidden');
+      if (resultsPlaceholder) resultsPlaceholder.classList.add('hidden');
 
       // Update basic calorie elements
       targetCaloriesEl.textContent = targetCalories.toLocaleString('ar-EG');
@@ -185,13 +191,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (neck > 0 && waist > 0) {
           if (gender === 'male' && waist <= neck) {
             bfText.textContent = 'الرجاء التأكد من صحة القياسات المدخلة (محيط الخصر يجب أن يكون أكبر من محيط الرقبة للذكور).';
+          } else if (gender === 'female' && !hip) {
+            bfText.textContent = 'أدخل محيط الأرداف أيضاً لحساب نسبة الدهون للإناث.';
           } else if (gender === 'female' && (waist + hip) <= neck) {
             bfText.textContent = 'الرجاء التأكد من صحة القياسات المدخلة (مجموع الخصر والردف يجب أن يكون أكبر من الرقبة للإناث).';
           } else {
             bfText.textContent = 'الرجاء التأكد من صحة القياسات المدخلة لتقدير نسبة الدهون بشكل صحيح.';
           }
         } else {
-          bfText.textContent = 'أدخل قياسات الرقبة والخصر والردف لحساب نسبة الدهون.';
+          bfText.textContent = 'أدخل قياسات الرقبة والخصر (والأرداف للإناث) لحساب نسبة الدهون.';
         }
         if (progressCircle) {
           progressCircle.style.strokeDashoffset = progressCircle.r.baseVal.value * 2 * Math.PI;
@@ -200,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 7. Generate WhatsApp Link
       const bfSectionText = hasValidBF ? `• نسبة الدهون المحسوبة: ${Math.round(bodyFat * 10) / 10}%\n` : '';
-      const messageText = `مرحباً كوتش يوسف، قمت بحساب سعراتي وااحتياجاتي عبر حاسبة موقع نواة البدنية المحدثة، وهذه هي التفاصيل:\n\n` +
+      const messageText = `مرحباً كوتش يوسف، قمت بحساب سعراتي واحتياجاتي عبر حاسبة موقع نواة البدنية المحدثة، وهذه هي التفاصيل:\n\n` +
                           `• الجنس: ${gender === 'male' ? 'ذكر' : 'أنثى'}\n` +
                           `• العمر: ${age} سنة\n` +
                           `• الوزن: ${weight} كجم\n` +
@@ -222,5 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
       // Scroll results card into view smoothly
       resultsCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 800);
-  };
+  }
 });

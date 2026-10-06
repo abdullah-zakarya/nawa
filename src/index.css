@@ -36,6 +36,7 @@
     background-color: var(--color-surface-base);
     color: var(--color-on-surface);
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem; /* keep anchored sections clear of the fixed header */
     overflow-x: hidden;
   }
   body {
@@ -210,6 +211,8 @@
   height: 8px;
   border-radius: 9999px;
   background-color: rgba(220, 229, 217, 0.2);
+  border: none;
+  padding: 0;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -219,5 +222,24 @@
   background-color: var(--color-primary);
 }
 
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
 
-
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal-right,
+  .reveal-left,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

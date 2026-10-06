@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpeg" href="/logo.jpeg?v=2" />
+    <meta name="description" content="نواة NAWA مع الكوتش يوسف محمد: برامج تدريب وتغذية مخصصة بالكامل، خطة مجانية للبداية، وباقات متابعة شخصية لتحقيق أفضل النتائج." />
+    <meta name="theme-color" content="#0b1f1a" />
     <title>NAWA - كوتش يوسف محمد</title>
     <link rel="stylesheet" href="/src/index.css" />
     <!-- Lucide Icons -->
@@ -69,7 +71,7 @@
                 </p>
               </div>
               <!-- Card 2 -->
-              <div class="glass-panel rounded-2xl p-8 flex flex-col gap-4 transform hover:-translate-y-1 transition-transform duration-300 md:-translate-y-4 reveal">
+              <div class="glass-panel rounded-2xl p-8 flex flex-col gap-4 transform hover:-translate-y-1 md:-translate-y-4 md:hover:-translate-y-5 transition-transform duration-300 reveal">
                 <div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary mb-2">
                   <i data-lucide="heart-pulse" class="w-6 h-6"></i>
                 </div>
@@ -302,11 +304,11 @@
 
               <!-- Controls -->
               <div class="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-2 md:px-12 z-20 pointer-events-none">
-                <button id="next-testimonial" class="pointer-events-auto w-12 h-12 rounded-full bg-surface-container/90 border border-primary/20 hover:border-primary/60 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all cursor-pointer shadow-2xl">
-                  <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                </button>
-                <button id="prev-testimonial" class="pointer-events-auto w-12 h-12 rounded-full bg-surface-container/90 border border-primary/20 hover:border-primary/60 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all cursor-pointer shadow-2xl">
+                <button id="next-testimonial" type="button" aria-label="الرأي التالي" class="pointer-events-auto w-12 h-12 rounded-full bg-surface-container/90 border border-primary/20 hover:border-primary/60 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all cursor-pointer shadow-2xl">
                   <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+                <button id="prev-testimonial" type="button" aria-label="الرأي السابق" class="pointer-events-auto w-12 h-12 rounded-full bg-surface-container/90 border border-primary/20 hover:border-primary/60 flex items-center justify-center text-primary hover:bg-primary hover:text-background transition-all cursor-pointer shadow-2xl">
+                  <i data-lucide="chevron-right" class="w-6 h-6"></i>
                 </button>
               </div>
 
@@ -332,38 +334,25 @@
           <!-- Pricing Duration Toggle -->
           <div class="flex justify-center mb-12 reveal">
             <div class="bg-surface-container/50 backdrop-blur-md p-1.5 rounded-2xl border border-outline-variant/30 flex gap-2">
-              <button id="toggle-12" class="px-6 py-2.5 rounded-xl text-sm font-black transition-all bg-primary text-background shadow-lg shadow-primary/20 cursor-pointer">
+              <button id="toggle-12" type="button" aria-pressed="true" class="px-6 py-2.5 rounded-xl text-sm font-black transition-all bg-primary text-background shadow-lg shadow-primary/20 cursor-pointer">
                 ١٢ أسبوعًا
               </button>
-              <button id="toggle-24" class="px-6 py-2.5 rounded-xl text-sm font-black transition-all text-on-surface/60 hover:text-on-surface cursor-pointer">
+              <button id="toggle-24" type="button" aria-pressed="false" class="px-6 py-2.5 rounded-xl text-sm font-black transition-all text-on-surface/60 hover:text-on-surface cursor-pointer">
                 ٢٤ أسبوعًا
               </button>
             </div>
           </div>
 
           <!-- Pricing Comparison Grid -->
-          <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch relative">
-            <!-- 🌱 باقة غرس -->
-            <div class="plan-card glass-panel rounded-2xl p-8 border border-outline-variant flex flex-col h-full hover:bg-surface-container/50 transition-colors duration-300 reveal"
-                 data-price-12="٥٠٠"
-                 data-price-24="٩٠٠"
-                 data-duration-text-12="/ ١٢ أسبوعًا"
-                 data-duration-text-24="/ ٢٤ أسبوعًا"
-                 data-text-12="مرحباً كوتش يوسف، أود الاشتراك في باقة غرس 🌱 لمدة 12 أسبوعاً بسعر 500 جنيه مصري. كيف نبدأ؟"
-                 data-text-24="مرحباً كوتش يوسف، أود الاشتراك في باقة غرس 🌱 لمدة 24 أسبوعاً بسعر 900 جنيه مصري. كيف نبدأ؟">
-              <div class="mb-6">
+          <div class="max-w-xl lg:max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch relative">
+            <!-- 🌱 الخطة المجانية -->
+            <div class="glass-panel rounded-2xl p-8 border border-outline-variant flex flex-col h-full hover:bg-surface-container/50 transition-colors duration-300 reveal">
+              <div class="mb-8">
                 <h3 class="text-2xl font-black text-on-surface mb-2 flex items-center gap-2">
-                  <span>باقة غرس</span>
+                  <span>الخطة المجانية</span>
                   <span class="text-primary text-xl">🌱</span>
                 </h3>
                 <p class="text-xs text-on-surface-variant leading-relaxed">البداية الصحيحة لكل رحلة ناجحة. مناسبة لمن يريد خطة شخصية واضحة يستطيع الالتزام بها بشكل مستقل.</p>
-              </div>
-              <div class="mb-8 flex flex-col gap-1">
-                <div class="flex items-baseline gap-2">
-                  <span class="price-val text-4xl font-extrabold text-primary">٥٠٠</span>
-                  <span class="text-xl text-primary font-black">ج.م</span>
-                  <span class="duration-text text-xs text-on-surface-variant">/ ١٢ أسبوعًا</span>
-                </div>
               </div>
               <div class="flex-grow">
                 <ul class="space-y-4 mb-8 text-on-surface text-sm">
@@ -373,7 +362,7 @@
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
-                    <span>نظام غذائي مخصص حسب أهدافك وااحتياجاتك.</span>
+                    <span>نظام غذائي مخصص حسب أهدافك واحتياجاتك.</span>
                   </li>
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
@@ -389,13 +378,13 @@
                   </li>
                 </ul>
               </div>
-              <a href="#" class="checkout-btn w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm block">
-                اختر الباقة
+              <a href="#" target="_blank" rel="noopener" data-wa-text="مرحباً كوتش يوسف، أود الحصول على الخطة المجانية 🌱. كيف نبدأ؟" class="w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm block">
+                ابدأ مجاناً
               </a>
             </div>
 
             <!-- 🌿 باقة ازدهار -->
-            <div class="plan-card bg-surface-container rounded-2xl p-8 border-2 border-primary glow-border flex flex-col h-full relative z-10 transform md:-translate-y-4 reveal-scale"
+            <div class="plan-card bg-surface-container rounded-2xl p-8 border-2 border-primary glow-border flex flex-col h-full relative z-10 lg:-translate-y-4 reveal-scale"
                  data-price-12="١,٥٠٠"
                  data-price-24="٢,٥٠٠"
                  data-duration-text-12="/ ١٢ أسبوعًا"
@@ -419,7 +408,7 @@
                 </div>
               </div>
               <div class="flex-grow">
-                <p class="text-xs font-bold text-primary mb-4">تشمل كل ما في باقة غرس بالإضافة إلى:</p>
+                <p class="text-xs font-bold text-primary mb-4">تشمل كل ما في الخطة المجانية بالإضافة إلى:</p>
                 <ul class="space-y-4 mb-8 text-on-surface text-sm">
                   <li class="flex items-start gap-3">
                     <i data-lucide="check-circle-2" class="text-primary w-5 h-5 shrink-0 mt-0.5"></i>
@@ -443,7 +432,7 @@
                   </li>
                 </ul>
               </div>
-              <a href="#" class="checkout-btn w-full py-4 rounded-xl bg-primary text-background hover:bg-secondary transition-colors text-center font-black text-sm shadow-lg shadow-primary/20 block">
+              <a href="#" target="_blank" rel="noopener" class="checkout-btn w-full py-4 rounded-xl bg-primary text-background hover:bg-secondary transition-colors text-center font-black text-sm shadow-lg shadow-primary/20 block">
                 انضم الآن
               </a>
             </div>
@@ -495,7 +484,7 @@
                   </li>
                 </ul>
               </div>
-              <a href="#" class="checkout-btn w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm block">
+              <a href="#" target="_blank" rel="noopener" class="checkout-btn w-full py-4 rounded-xl border border-primary text-primary hover:bg-primary/10 transition-colors text-center font-bold text-sm block">
                 اختر الباقة
               </a>
             </div>

@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
       toggle12.classList.add('text-on-surface/60', 'hover:text-on-surface');
     }
 
+    toggle12.setAttribute('aria-pressed', String(duration === 12));
+    toggle24.setAttribute('aria-pressed', String(duration === 24));
+
     // Update each card's price, duration text, and WhatsApp checkout link
     cards.forEach(card => {
       const priceVal = card.querySelector('.price-val');

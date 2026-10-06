@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/jpeg" href="/logo.jpeg?v=2" />
+    <meta name="description" content="احسب سعراتك اليومية (BMR وTDEE) وتوزيع المغذيات الكبرى ونسبة دهون جسمك مجاناً مع حاسبة نواة." />
+    <meta name="theme-color" content="#0b1f1a" />
     <title>حاسبة اللياقة البدنية - NAWA</title>
     <link rel="stylesheet" href="/src/index.css" />
     <!-- Lucide Icons -->
@@ -38,21 +40,21 @@
                 <i data-lucide="sliders" class="text-primary"></i>
                 بياناتك الشخصية
               </h2>
-              <form class="space-y-6" id="calculatorForm" onsubmit="return false;">
+              <form class="space-y-6" id="calculatorForm">
                 <!-- Gender Selection (Pills) -->
                 <div>
                   <label class="block text-sm font-bold text-on-surface-variant mb-3">الجنس</label>
                   <div class="flex gap-4">
                     <label class="flex-1 cursor-pointer">
                       <input checked="" class="peer sr-only" name="gender" type="radio" value="male"/>
-                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary flex items-center justify-center gap-2 font-bold text-sm">
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary flex items-center justify-center gap-2 font-bold text-sm">
                         <i data-lucide="user" class="w-5 h-5"></i>
                         <span>ذكر</span>
                       </div>
                     </label>
                     <label class="flex-1 cursor-pointer">
                       <input class="peer sr-only" name="gender" type="radio" value="female"/>
-                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary flex items-center justify-center gap-2 font-bold text-sm">
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary flex items-center justify-center gap-2 font-bold text-sm">
                         <i data-lucide="user" class="w-5 h-5"></i>
                         <span>أنثى</span>
                       </div>
@@ -122,19 +124,19 @@
                   <div class="flex flex-col sm:flex-row gap-4">
                     <label class="flex-1 cursor-pointer">
                       <input checked="" class="peer sr-only" name="goal" type="radio" value="loss"/>
-                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary font-bold text-sm">
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary font-bold text-sm">
                         خسارة دهون (تنشيف)
                       </div>
                     </label>
                     <label class="flex-1 cursor-pointer">
                       <input class="peer sr-only" name="goal" type="radio" value="maintain"/>
-                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary font-bold text-sm">
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary font-bold text-sm">
                         المحافظة على الوزن
                       </div>
                     </label>
                     <label class="flex-1 cursor-pointer">
                       <input class="peer sr-only" name="goal" type="radio" value="gain"/>
-                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary font-bold text-sm">
+                      <div class="p-4 rounded-xl border border-outline-variant text-center transition-all peer-checked:border-primary peer-checked:bg-primary/10 peer-checked:text-primary peer-focus-visible:ring-2 peer-focus-visible:ring-primary font-bold text-sm">
                         بناء عضلات (تضخيم)
                       </div>
                     </label>
@@ -142,7 +144,7 @@
                 </div>
 
                 <!-- Action Button -->
-                <button class="w-full bg-primary text-background font-black text-lg py-4 rounded-xl hover:bg-secondary transition-all shadow-lg shadow-primary/15 active:scale-[0.98] mt-6 flex items-center justify-center gap-2" onclick="calculateResults()" type="button">
+                <button id="calc-btn" class="w-full bg-primary text-background font-black text-lg py-4 rounded-xl hover:bg-secondary transition-all shadow-lg shadow-primary/15 active:scale-[0.98] mt-6 flex items-center justify-center gap-2" type="submit">
                   <i data-lucide="sliders" class="w-5 h-5"></i>
                   <span>احسب النتائج</span>
                 </button>
@@ -152,6 +154,17 @@
 
           <!-- Results Section (Left Column RTL) -->
           <div class="lg:col-span-5 space-y-8 reveal-left">
+            <!-- Empty state, replaced by the results card after calculating -->
+            <div id="resultsPlaceholder" class="card-bg rounded-2xl p-8 border border-dashed border-outline-variant/60 text-center flex flex-col items-center gap-4">
+              <div class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-lg font-black text-on-surface">ستظهر نتائجك هنا</h3>
+              <p class="text-xs text-on-surface-variant leading-relaxed max-w-xs">
+                أدخل العمر والوزن والطول ثم اضغط "احسب النتائج" لتحصل على سعراتك اليومية وتوزيع المغذيات ونسبة الدهون.
+              </p>
+            </div>
+
             <!-- Hidden initially, shown via calculator.js -->
             <div id="resultsCard" class="hidden card-bg card-shadow rounded-2xl p-6 lg:p-8 border border-outline-variant/20 relative overflow-hidden group">
               <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -172,7 +185,7 @@
                   </div>
                   <div class="flex-grow">
                     <p class="text-xs font-black text-primary mb-1 uppercase tracking-wider">نسبة دهون الجسم</p>
-                    <p class="text-xs text-on-surface-variant leading-relaxed" id="bfText">أدخل قياسات الرقبة والخصر والردف لحساب نسبة الدهون.</p>
+                    <p class="text-xs text-on-surface-variant leading-relaxed" id="bfText">أدخل قياسات الرقبة والخصر (والأرداف للإناث) لحساب نسبة الدهون.</p>
                   </div>
                 </div>
 
@@ -253,7 +266,7 @@
                   </p>
                 </div>
               </div>
-              <a id="whatsapp-calc-btn" href="https://wa.me/201019912699" target="_blank" class="w-full flex items-center justify-center gap-2 border border-primary text-primary font-bold text-sm py-4 rounded-xl hover:bg-primary hover:text-background transition-all">
+              <a id="whatsapp-calc-btn" href="https://wa.me/201019912699" target="_blank" rel="noopener" class="w-full flex items-center justify-center gap-2 border border-primary text-primary font-bold text-sm py-4 rounded-xl hover:bg-primary hover:text-background transition-all">
                 <i data-lucide="message-circle" class="w-5 h-5"></i>
                 <span>أرسل النتائج للكوتش عبر الواتساب</span>
               </a>

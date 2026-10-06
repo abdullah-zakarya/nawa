@@ -34,7 +34,7 @@ function renderSharedComponents() {
   }
 
   // 4. Render WhatsApp Floating Button
-  const oldWhatsappBtns = document.querySelectorAll('a[href*="wa.me/"][class*="fixed bottom-8"]');
+  const oldWhatsappBtns = document.querySelectorAll('a.fixed[href*="wa.me/"]');
   oldWhatsappBtns.forEach(btn => btn.remove());
 
   if (root) {
@@ -55,60 +55,82 @@ function updateWhatsAppLinks() {
     const newHref = currentHref.replace(/(wa\.me\/)([0-9]+)/, `$1${CONFIG.whatsappNumber}`);
     link.setAttribute('href', newHref);
   });
+
+  // Links carrying a prefilled message: <a data-wa-text="...">
+  document.querySelectorAll('a[data-wa-text]').forEach(link => {
+    const text = encodeURIComponent(link.dataset.waText);
+    link.setAttribute('href', `https://wa.me/${CONFIG.whatsappNumber}?text=${text}`);
+  });
 }
 
-// Highlight active link based on window.location.pathname
-function highlightActiveNav() {
-  const currentPath = window.location.pathname;
-  
-  const isMatch = (href) => {
-    const cleanPath = currentPath.replace(/\.html$/, '').replace(/\/$/, '');
-    const cleanHref = href.replace(/\.html$/, '').replace(/^\.\//, '/').replace(/\/$/, '');
-    
-    if (cleanHref === '/index' || cleanHref === '' || cleanHref === '/') {
-      return cleanPath === '/index' || cleanPath === '' || cleanPath === '/';
-    }
-    return cleanPath === cleanHref || cleanPath.endsWith(cleanHref);
-  };
+// "/", "/index" and "/index.html" all refer to the home page
+function normalizePath(path) {
+  const clean = path.replace(/\.html$/, '').replace(/\/$/, '');
+  return clean === '' ? '/index' : clean;
+}
 
+function setActiveLinks(isActive) {
   // Desktop Links
   document.querySelectorAll('.nav-link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (isMatch(href)) {
-      link.classList.add('text-primary', 'font-bold');
-      link.classList.remove('text-on-surface/60', 'font-medium');
-    } else {
-      link.classList.remove('text-primary', 'font-bold');
-      link.classList.add('text-on-surface/60', 'font-medium');
-    }
+    const active = isActive(link.getAttribute('href'));
+    link.classList.toggle('text-primary', active);
+    link.classList.toggle('font-bold', active);
+    link.classList.toggle('text-on-surface/60', !active);
+    link.classList.toggle('font-medium', !active);
   });
 
   // Mobile Links
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    const href = link.getAttribute('href');
+    const active = isActive(link.getAttribute('href'));
     const iconContainer = link.querySelector('div');
     const textLabel = link.querySelector('span');
-    
-    if (isMatch(href)) {
-      if (iconContainer) {
-        iconContainer.classList.add('bg-primary/10', 'text-primary');
-        iconContainer.classList.remove('bg-white/5', 'text-on-surface/40');
-      }
-      if (textLabel) {
-        textLabel.classList.add('text-primary');
-        textLabel.classList.remove('text-on-surface/60');
-      }
-    } else {
-      if (iconContainer) {
-        iconContainer.classList.remove('bg-primary/10', 'text-primary');
-        iconContainer.classList.add('bg-white/5', 'text-on-surface/40');
-      }
-      if (textLabel) {
-        textLabel.classList.remove('text-primary');
-        textLabel.classList.add('text-on-surface/60');
-      }
+
+    if (iconContainer) {
+      iconContainer.classList.toggle('bg-primary/10', active);
+      iconContainer.classList.toggle('text-primary', active);
+      iconContainer.classList.toggle('bg-white/5', !active);
+      iconContainer.classList.toggle('text-on-surface/40', !active);
+    }
+    if (textLabel) {
+      textLabel.classList.toggle('text-primary', active);
+      textLabel.classList.toggle('text-on-surface/60', !active);
     }
   });
+}
+
+// Highlight the active link: by page, or by visible section (scroll-spy) on pages with in-page links
+function highlightActiveNav() {
+  const currentPath = normalizePath(window.location.pathname);
+  const onCurrentPage = (href) => normalizePath(new URL(href, window.location.href).pathname) === currentPath;
+  const hashOf = (href) => new URL(href, window.location.href).hash;
+
+  const sections = [...new Set(
+    Array.from(document.querySelectorAll('.nav-link'))
+      .map(link => link.getAttribute('href'))
+      .filter(onCurrentPage)
+      .map(hashOf)
+      .filter(Boolean)
+  )]
+    .map(hash => document.querySelector(hash))
+    .filter(Boolean)
+    .sort((a, b) => (a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1));
+
+  if (sections.length === 0) {
+    setActiveLinks(onCurrentPage);
+    return;
+  }
+
+  const update = () => {
+    const headerOffset = 120;
+    let current = sections[0];
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top - headerOffset <= 0) current = section;
+    });
+    setActiveLinks(href => onCurrentPage(href) && hashOf(href) === `#${current.id}`);
+  };
+
+  update();
+  window.addEventListener('scroll', update, { passive: true });
 }
 
 // Initialize on page load
@@ -155,15 +177,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!mobileMenu || !mobileMenuBackdrop) return;
     mobileMenu.classList.remove('translate-x-full');
     mobileMenuBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+    mobileMenu.inert = false;
     document.body.style.overflow = 'hidden';
+    mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+    closeMenuBtn?.focus();
   }
 
   function closeMenu() {
     if (!mobileMenu || !mobileMenuBackdrop) return;
+    const wasOpen = !mobileMenu.classList.contains('translate-x-full');
     mobileMenu.classList.add('translate-x-full');
     mobileMenuBackdrop.classList.add('opacity-0', 'pointer-events-none');
+    mobileMenu.inert = true;
     document.body.style.overflow = '';
+    mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    if (wasOpen) mobileMenuBtn?.focus();
   }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
 
   if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', openMenu);
